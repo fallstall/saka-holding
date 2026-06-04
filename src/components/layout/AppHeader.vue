@@ -42,7 +42,7 @@ import arrowIcon from '@/assets/images/cart.png';
 .header {
   width: 1400px;
   max-width: 100vw;
-  height: 118px;
+  min-height: 178px;
   margin: 0 auto;
   background-color: var(--black-color);
 
