@@ -11,5 +11,12 @@
 .logo {
     display: inline-flex;
     align-items: center;
+    flex: 0 0 auto;
+}
+
+.logo img {
+    width: 121px;
+    height: auto;
+    display: block;
 }
 </style>

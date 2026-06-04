@@ -2,7 +2,8 @@ import {
     createRouter,
     createWebHistory
 } from "vue-router"
-import HomePage from "../pages/HomePage.vue"
+import HomePage from "@/pages/HomePage.vue"
+// поменяла с "../pages/HomePage.vue"
 
 export const router = createRouter({
     history: createWebHistory(),
@@ -10,3 +11,4 @@ export const router = createRouter({
         { path: '/', component: HomePage},
     ]
 })
+export default router
