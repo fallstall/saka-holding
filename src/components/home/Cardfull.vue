@@ -1,7 +1,5 @@
 <script setup lang="ts">
     import CardCloth from '@/components/home/CardCloth.vue';
-    import Button from '@/components/ui/Button.vue';
-
     import gray from '@/assets/images/cloth/gray.png'
     import red from '@/assets/images/cloth/Rectangle 126.png'
     import pink from '@/assets/images/cloth/pink.png'
@@ -16,14 +14,14 @@
             <div class="cards-wrapper">
                 <div>
                     <p class="section-title">Выбирайте из множества разновидностей тканей</p>
-                    <CardCloth theme="max" :image="blue" />
-                    <CardCloth theme="min" :image="gray" />
-                    <CardCloth theme="avg" :image="pink" />
+                    <CardCloth theme="max" :image="blue" button-text="Футер 3-х Нитка" />
+                    <CardCloth theme="min" :image="gray" button-text="Френч Терри" />
+                    <CardCloth theme="avg" :image="pink" button-text="Вискоза" />
                 </div>
                 <div>
-                    <CardCloth theme="min" :image="black" />
-                    <CardCloth theme="avg" :image="blackgray" /> 
-                    <CardCloth theme="max" :image="red" />
+                    <CardCloth theme="min" :image="black" button-text="Пике" />
+                    <CardCloth theme="avg" :image="blackgray" button-text="Кулинарная гладь" />
+                    <CardCloth theme="max" :image="red" button-text="Бифлекс" />
                 </div>
             </div>
         </div>
@@ -32,38 +30,59 @@
 
 <style lang="scss">
     .home-page {
-        min-height: 100vh;
+        width: 100%;
+        padding: 70px 0;
         display: flex;
-        align-items: center;      
-        justify-content: center; 
+        align-items: center;
+        justify-content: center;
+        background-color: var(--black-color);
         font-family: Montserrat;
     }
 
     .container {
-        width: 100%;
-        max-width: 1200px;
+        width: min(1160px, calc(100vw - 48px));
         margin: 0 auto;
-        padding: 20px;
-        max-width: 100%;
-        background-color: var(--black-color);
     }
 
     .cards-wrapper {
         display: flex;
-        justify-content: center;  
-        align-items: center;      
-        gap: 5px;
+        justify-content: center;
+        align-items: center;
+        gap: 24px;
         flex-direction: column;
     }
+
+    .cards-wrapper > div {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 40px;
+    }
+
     .section-title {
-    font-size: 26px;
-    font-weight: 560;
-    color: var(--bg-color);
-    text-align: left;       
-    margin-bottom: 30px;
-    max-width: 400px;           
-    margin-left: 10px;  
-    margin-right: auto;
-}
+        font-size: 26px;
+        font-weight: 560;
+        color: var(--bg-color);
+        text-align: left;
+        margin: 0 0 30px 10px;
+        max-width: 430px;
+        margin-right: auto;
+    }
+
+    @include laptop {
+        .home-page {
+            padding: 48px 0;
+        }
+
+        .container {
+            width: min(100% - 32px, 680px);
+        }
+
+        .cards-wrapper > div {
+            flex-direction: column;
+            gap: 18px;
+        }
+    }
 
 </style>

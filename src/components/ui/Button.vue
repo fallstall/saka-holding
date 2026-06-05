@@ -82,13 +82,21 @@ defineProps<{
 
     // только текст по центру
         &--text {
-            width: 260px;
-            height: 60px;
-            padding: 0 52px;
-            border-radius: 100px;
-
+            width: auto;
+            max-width: 180px;
+            height: 32px;
+            padding: 0 18px;
+            border-radius: 4px;
+            background-color: var(--gold-color);
+            color: var(--black-color);
             justify-content: center;
             text-align: center;
+
+            .btn__text {
+                font-size: 14px;
+                font-weight: 500;
+                line-height: 1;
+            }
         }
     }
 </style>

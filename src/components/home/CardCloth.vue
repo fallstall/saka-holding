@@ -1,11 +1,13 @@
 <!-- src/components/home/CardCloth.vue -->
 <script setup lang="ts">
+import Button from '@/components/ui/Button.vue'
 
 defineProps<{
     image?: string      // картинка ткани
     theme?: 'max' | 'avg' | 'min'
     transform?: string
     icon?: string
+    buttonText?: string
 }>()
 
 </script>
@@ -31,6 +33,12 @@ defineProps<{
             :src="image"
             alt="Cloth"
         >
+        <Button
+            v-if="buttonText"
+            class="cardCloth__button"
+            theme="text"
+            :text="buttonText"
+        />
     
     </div>
 </template>
@@ -39,6 +47,8 @@ defineProps<{
 @use '@/assets/styles/variables.scss' as *;
 
 .cardCloth {
+    box-sizing: border-box;
+    position: relative;
     border: none;
     display: inline-flex;
     flex-direction: column;
@@ -67,6 +77,19 @@ defineProps<{
         object-fit: cover;
         display: block;
         border-radius: var(--border-radius-xs);
+    }
+
+    &__button {
+        position: absolute;
+        left: 30px;
+        bottom: 28px;
+    }
+}
+
+@include laptop {
+    .cardCloth {
+        width: 100%;
+        max-width: 460px;
     }
 }
 </style>

@@ -106,12 +106,12 @@ onBeforeUnmount(stopSlider)
 
 <style scoped lang="scss">
 .slider {
-    padding: 100px 0 70px;
+    padding: 96px 0 0px;
     background-color: #fff;
 
     &__card {
         position: relative;
-        width: min(1105px, calc(100vw - 48px));
+        width: min(1160px, calc(100vw - 48px));
         height: 438px;
         margin: 0 auto;
         overflow: visible;
@@ -240,7 +240,7 @@ onBeforeUnmount(stopSlider)
     }
 }
 
-@media (max-width: 900px) {
+@include laptop {
     .slider {
         padding-top: 40px;
 

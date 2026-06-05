@@ -50,18 +50,21 @@ defineProps<{
 <style lang="scss">
 @use '@/assets/styles/variables.scss' as *;
 .newscard-one{
+    box-sizing: border-box;
     display: flex;
     background-color: var(--black-color);
     width: 360px;
     height: 400px;
     border-radius: var(--border-radius-xs);
     flex-direction: column;
-    margin-right: 40px;
+
     &__head{
         display: flex;
         flex-direction: column;
-        width: 360px;
+        width: 100%;
         height: 240px;
+        background-position: center;
+        background-size: cover;
     }
     &__title{
         color: var(--bg-color);
@@ -72,7 +75,8 @@ defineProps<{
         margin-left: 30px;
     }
     &__button{
-        margin-left: 280px;
+        margin-left: auto;
+        margin-right: 30px;
         margin-top: 30px;
     }
 
@@ -89,6 +93,22 @@ defineProps<{
         color: var(--bg-color);
         margin-left: 30px;
         margin-top: 20px;
+    }
+}
+
+@include mobile {
+    .newscard-one {
+        width: 100%;
+
+        &__title,
+        &__text,
+        &__date {
+            margin-left: 22px;
+        }
+
+        &__button {
+            margin-right: 22px;
+        }
     }
 }
 </style>

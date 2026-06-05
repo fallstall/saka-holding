@@ -19,12 +19,39 @@ import Newscard from '@/components/ui/news-cards/News-card-one.vue';
 
 <style lang="scss">
 .news-card{
-    justify-self: center;
+    width: min(1160px, calc(100vw - 48px));
+    margin: 0 auto;
+    display: flex;
     flex-direction: column;
+    align-items: center;
+    padding: 70px 0;
+
     &__row{
-        margin-bottom: 40px;
+        width: 100%;
         display: flex;
-        flex-direction: row;
+        justify-content: center;
+        gap: 40px;
+
+        &:not(:last-child) {
+            margin-bottom: 40px;
+        }
+    }
+}
+
+@include laptop {
+    .news-card {
+        width: min(100% - 32px, 680px);
+        padding: 48px 0;
+
+        &__row {
+            flex-direction: column;
+            align-items: center;
+            gap: 24px;
+
+            &:not(:last-child) {
+                margin-bottom: 24px;
+            }
+        }
     }
 }
 </style>
