@@ -26,10 +26,27 @@
         </div>
     </div>
 </template>
-<style>
-    .bebe {
-        width: 800px;
-        height: 890px;
-        background-color: aqua;
-}
+<style scoped lang="scss">
+
+    .subtitle__main-div {
+        padding-left: 120px;
+        max-width: 100vw;
+        min-height: 50px;
+        margin: 0 auto;
+        background-color: var(--black-color);
+        color: white;
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        align-items: center;
+        gap: 40px;
+
+        .subtitle__row-div {
+            display: flex;
+            flex-direction: row;
+            align-items: flex-start;
+            align-items: center;
+            gap: 30px;
+        }
+    }
 </style>
