@@ -63,8 +63,8 @@ defineProps<{
 
     // только иконка, круглая кнопка
         &--icon {
-            width: 84px;
-            height: 84px;
+            width: 50px;
+            height: 50px;
             padding: 0;
             border-radius: 50%;
         }
