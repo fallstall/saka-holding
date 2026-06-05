@@ -66,18 +66,7 @@ defineProps<{
         height: 210px;           // общая высота 210px 
         object-fit: cover;
         display: block;
-        
-        .cardCloth--max & {
-            border-radius: 8px;
-        }
-        
-        .cardCloth--avg & {
-            border-radius: 6px;
-        }
-        
-        .cardCloth--min & {
-            border-radius: 4px;
-        }
+        border-radius: var(--border-radius-xs);
     }
 }
 </style>
