@@ -2,13 +2,15 @@
     import Subtitle from '@/components/home/Subtitle.vue';
     import Slider from '@/components/home/Slider.vue';
     import CardCloth from '@/components/home/CardCloth.vue';
-    // images
-    // import gray from '@/assets/images/cloth/gray.png';
-    // import red from '@/assets/images/cloth/red.png';
-    // import pink from '@/assets/images/cloth/pink.png';
-    // import blue from '@/assets/images/cloth/blue.png';
-    // import blaсk from '@/assets/images/cloth/blaсk.png';
-    // import blackgray from '@/assets/images/cloth/blackgray.png';    
+
+
+
+    import gray from '@/assets/images/cloth/gray.png'
+    import red from '@/assets/images/cloth/Rectangle 126.png'
+    import pink from '@/assets/images/cloth/pink.png'
+    import blue from '@/assets/images/cloth/blue.png'
+    import black from '@/assets/images/cloth/black.png'
+    import blackgray from '@/assets/images/cloth/blackblue.png'   
     import NewsCards from '../components/ui/news-cards/News-cards.vue'; 
 </script>
 <template>
@@ -28,7 +30,7 @@
                     <CardCloth theme="avg" :image="pink" />
                 </div>
                 <div>
-                    <CardCloth theme="min" :image="blaсk" />
+                    <CardCloth theme="min" :image="black" />
                     <CardCloth theme="avg" :image="blackgray" /> 
                     <CardCloth theme="max" :image="red" />
                 </div>

@@ -18,9 +18,9 @@ const slides = [
 ]
 
 const activeSlide = ref(0)
-let sliderTimer: ReturnType<typeof window.setInterval> | undefined
+let sliderTimer: number | undefined
 
-const currentSlide = computed(() => slides[activeSlide.value])
+const currentSlide = computed(() => slides[activeSlide.value]!)
 const slideNumber = computed(() => String(activeSlide.value + 1).padStart(2, '0'))
 const totalSlides = computed(() => String(slides.length).padStart(2, '0'))
 
