@@ -33,6 +33,8 @@ defineProps<{
     </button>
 </template>
 
+
+
 <style scoped lang="scss">
 @use '@/assets/styles/variables.scss' as *;
     .btn {

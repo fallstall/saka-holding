@@ -40,7 +40,7 @@ import arrowIcon from '@/assets/images/cart.png';
 
 <style scoped lang="scss">
 .header {
-  width: 1400px;
+  
   max-width: 100vw;
   min-height: 178px;
   margin: 0 auto;

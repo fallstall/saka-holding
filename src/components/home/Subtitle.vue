@@ -1,10 +1,9 @@
-<script setup lang="ts">
+<script>
+
 </script>
 <template>
-
-<SadeBsar /> 
-
-
+    
 </template>
 <style>
+
 </style>
