@@ -1,8 +1,9 @@
 <script setup lang="ts">
+    import Subtitle from '@/components/home/Subtitle.vue';
 </script>
 <template>
 
-<SadeBsar /> 
+<Subtitle /> 
 
 
 </template>
