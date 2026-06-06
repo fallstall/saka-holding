@@ -34,8 +34,9 @@ function showNext() {
 
 <template>
     <section class="fabric-slider">
-        <Title text="Недавно просмотренные" theme="left" class="fabric-slider__text-left"/>
+        
         <div class="fabric-slider__inner">
+            <Title text="Недавно просмотренные" theme="left" class="fabric-slider__text-left"/>
             <button
                 class="fabric-slider__arrow fabric-slider__arrow--prev"
                 type="button"
@@ -99,9 +100,6 @@ function showNext() {
         display: grid;
         grid-template-columns: repeat(4, minmax(0, 1fr));
         gap: 30px;
-    }
-    &__text-left {
-        padding-left: 369px;
     }
 
     &__card {

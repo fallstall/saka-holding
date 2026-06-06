@@ -9,7 +9,6 @@ defineProps<{
             {{ text }}
         </p>
 
-
 </template>
 <style scoped lang="scss">
 @use '@/assets/styles/variables.scss' as *;

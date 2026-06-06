@@ -49,4 +49,14 @@
             gap: 30px;
         }
     }
+@include laptop {
+
+    .subtitle__main-div {
+        display: none;
+
+        .subtitle__row-div {
+            display: none;
+        }
+    }
+}
 </style>

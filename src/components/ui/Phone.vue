@@ -67,4 +67,10 @@ import { RouterLink } from 'vue-router'
         text-underline-offset: 2px;
     }
 }
+  @include laptop {
+    .phone {
+      display: none;
+      
+    }
+}
 </style>

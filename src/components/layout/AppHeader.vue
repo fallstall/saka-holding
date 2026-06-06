@@ -115,5 +115,31 @@ import arrowIcon from '@/assets/images/cart.png';
     object-fit: contain;
     margin-left: 20px;
   }
+
 }
+
+  @include laptop {
+    .header {
+      
+      
+
+        &__top {
+            height: 120px;
+        }
+
+        &__text {
+          display: none;
+        }
+        &__language {
+          display: none;
+        }
+        &__cart-count {
+          display: none;
+        }
+        &__cart-button {
+          display: none;
+        }
+    }
+}
+
 </style>

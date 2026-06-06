@@ -7,7 +7,7 @@
     </RouterLink>  
 </template>
 
-<style>
+<style scoped lang="scss">
 .logo {
     display: inline-flex;
     align-items: center;
@@ -18,5 +18,11 @@
     width: 121px;
     height: auto;
     display: block;
+}
+@include laptop {
+
+    .logo {
+        padding-right: 40px;
+    }
 }
 </style>

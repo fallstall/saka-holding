@@ -132,4 +132,10 @@ const navItems = [
         transform: rotate(45deg) translateY(-3px);
     }
     }
+    @include laptop {
+        .nav {
+            display: none;
+
+        }
+}
 </style>

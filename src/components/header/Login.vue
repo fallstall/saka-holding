@@ -32,4 +32,9 @@ import { RouterLink } from 'vue-router'
         text-decoration: none;
     }
 }
+  @include laptop {
+    .login {
+        display: None;
+    }
+}
 </style>
