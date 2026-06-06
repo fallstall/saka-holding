@@ -12,8 +12,9 @@
     <div class="home-page">
         <div class="container">
             <div class="cards-wrapper">
+                <p class="section-title">Выбирайте из множества разновидностей тканей</p>
                 <div>
-                    <p class="section-title">Выбирайте из множества разновидностей тканей</p>
+                    
                     <CardCloth theme="max" :image="blue" button-text="Футер 3-х Нитка" />
                     <CardCloth theme="min" :image="gray" button-text="Френч Терри" />
                     <CardCloth theme="avg" :image="pink" button-text="Вискоза" />
