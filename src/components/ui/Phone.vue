@@ -49,7 +49,7 @@ import { RouterLink } from 'vue-router'
 
     &__number {
         margin: 0;
-        color: white;
+        color: var(--text-light-color);
         font-size: 23px;
         font-weight: 500;
         line-height: 1;
@@ -59,7 +59,7 @@ import { RouterLink } from 'vue-router'
     &__login-link {
         align-self: flex-end;
         margin-top: 7px;
-        color: rgba(255, 255, 255, 0.7);
+        color: var(--on-dark-70-color);
         font-size: 13px;
         font-weight: 400;
         line-height: 1;

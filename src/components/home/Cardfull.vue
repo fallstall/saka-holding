@@ -64,7 +64,7 @@
     .section-title {
         font-size: 26px;
         font-weight: 560;
-        color: var(--bg-color);
+        color: var(--text-light-color);
         text-align: left;
         margin: 0 0 30px 10px;
         max-width: 430px;

@@ -107,7 +107,7 @@ onBeforeUnmount(stopSlider)
 <style scoped lang="scss">
 .slider {
     padding: 96px 0 0px;
-    background-color: #fff;
+    background-color: var(--bg-color);
 
     &__card {
         position: relative;
@@ -149,7 +149,7 @@ onBeforeUnmount(stopSlider)
 
     &__title {
         margin: 0;
-        color: #fff;
+        color: var(--text-light-color);
         font-size: 30px;
         font-weight: 700;
         line-height: 1.35;
@@ -171,7 +171,7 @@ onBeforeUnmount(stopSlider)
         border: 0;
         border-radius: 100px;
         background-color: var(--gold-color);
-        color: var(--black-color);
+        color: var(--text-dark-color);
         cursor: pointer;
         font-size: 15px;
         font-weight: 700;
@@ -217,7 +217,7 @@ onBeforeUnmount(stopSlider)
         height: 3px;
         padding: 0;
         border: 0;
-        background-color: rgba(255, 255, 255, 0.16);
+        background-color: var(--on-dark-16-color);
         cursor: pointer;
 
         &--active {
@@ -229,13 +229,13 @@ onBeforeUnmount(stopSlider)
         display: flex;
         align-items: center;
         gap: 14px;
-        color: rgba(255, 255, 255, 0.35);
+        color: var(--on-dark-35-color);
         font-size: 16px;
         font-weight: 400;
         letter-spacing: 1px;
 
         span:first-child {
-            color: #fff;
+            color: var(--text-light-color);
         }
     }
 }

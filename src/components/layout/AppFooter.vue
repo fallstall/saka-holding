@@ -106,9 +106,9 @@ const informationLinks = [
 .footer {
     width: 100%;
     min-height: 412px;
-    border-top: 1px solid rgba(255, 255, 255, 0.45);
+    border-top: 1px solid var(--on-dark-45-color);
     background-color: var(--black-color);
-    color: #fff;
+    color: var(--text-light-color);
 
     &__inner {
         width: min(1160px, calc(100vw - 48px));
@@ -144,14 +144,14 @@ const informationLinks = [
 
     &__heading {
         margin: 0 0 12px;
-        color: #fff;
+        color: var(--text-light-color);
         font-size: 16px;
         font-weight: 600;
         line-height: 151%;
     }
 
     &__link {
-        color: rgba(255, 255, 255, 0.76);
+        color: var(--on-dark-76-color);
         font-size: 13px;
         font-weight: 400;
         line-height: 1.25;
@@ -179,7 +179,7 @@ const informationLinks = [
         position: absolute;
         left: 30px;
         z-index: 1;
-        color: rgba(255, 255, 255, 0.7);
+        color: var(--on-dark-70-color);
         font-size: 12px;
         pointer-events: none;
     }
@@ -193,7 +193,7 @@ const informationLinks = [
         border-radius: 25px;
         outline: 0;
         background-color: var(--black-80-color);
-        color: #fff;
+        color: var(--text-light-color);
         font: inherit;
 
         &:focus + .footer__submit,
@@ -222,7 +222,7 @@ const informationLinks = [
         align-items: center;
         justify-content: flex-end;
         gap: 8px;
-        color: #fff;
+        color: var(--text-light-color);
         font-size: 18px;
         font-weight: 600;
         text-decoration: none;
@@ -265,7 +265,7 @@ const informationLinks = [
         align-items: center;
         justify-content: center;
         border-radius: 50%;
-        color: #fff;
+        color: var(--text-light-color);
         font-size: 11px;
         font-weight: 700;
         text-decoration: none;
@@ -276,27 +276,27 @@ const informationLinks = [
         }
 
         &--vk {
-            background-color: #4c75a3;
+            background-color: var(--vk-color);
         }
 
         &--wa {
-            background-color: #20c968;
+            background-color: var(--whatsapp-color);
         }
 
         &--tg {
-            background-color: #2ca5e0;
+            background-color: var(--telegram-color);
         }
 
         &--ig {
-            background-color: #fff;
-            color: var(--black-color);
+            background-color: var(--bg-color);
+            color: var(--text-dark-color);
             font-size: 20px;
         }
     }
 
     &__copyright {
         margin: 0 0 9px;
-        color: rgba(255, 255, 255, 0.34);
+        color: var(--on-dark-34-color);
         font-size: 13px;
         font-weight: 400;
     }

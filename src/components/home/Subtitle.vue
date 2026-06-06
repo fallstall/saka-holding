@@ -34,7 +34,7 @@
         min-height: 50px;
         margin: 0 auto;
         background-color: var(--black-color);
-        color: white;
+        color: var(--text-light-color);
         display: flex;
         flex-direction: row;
         align-items: flex-start;

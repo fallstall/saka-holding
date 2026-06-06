@@ -66,7 +66,7 @@ function showNext() {
 
 <style scoped lang="scss">
 .sert-slider {
-    background-color: #fff;
+    background-color: var(--bg-color);
     padding: 5px 0 76px;
 
     &__inner {
@@ -107,7 +107,7 @@ function showNext() {
         padding: 0;
         border: 0;
         border-radius: 50%;
-        background-color: #f5f5f5;
+        background-color: var(--control-color);
         cursor: pointer;
         transform: translateY(-50%);
         transition:
@@ -115,7 +115,7 @@ function showNext() {
             transform 0.2s ease;
 
         &:hover {
-            background-color: #ececec;
+            background-color: var(--control-hover-color);
             transform: translateY(-50%) scale(1.04);
         }
 

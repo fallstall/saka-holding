@@ -7,6 +7,7 @@ import Button from '@/components/ui/Button.vue';
 import Emblem from '@/components/header/Emblem.vue';
 import Login from '@/components/header/Login.vue';
 import NavBar from '@/components/header/NavBar.vue';
+import Themebtn from '@/components/header/Themebtn.vue';
 // images
 import arrowIcon from '@/assets/images/cart.png';
 </script>
@@ -30,7 +31,7 @@ import arrowIcon from '@/assets/images/cart.png';
         </div>
         <Login />
         <Phone />
-        <img class="header__language" src="./../../assets/images/language.png" alt="RU / EN">
+        <Themebtn />
       </div>
     </div>
     <NavBar />
@@ -56,7 +57,7 @@ import arrowIcon from '@/assets/images/cart.png';
 
   &__text {
     margin: 0 0 0 30px;
-    color: rgba(255, 255, 255, 0.68);
+    color: var(--on-dark-68-color);
     font-size: 12px;
     font-weight: 400;
     line-height: 1.28;
@@ -103,7 +104,7 @@ import arrowIcon from '@/assets/images/cart.png';
     justify-content: center;
     border-radius: 50%;
     background-color: var(--gold-color);
-    color: #fff;
+    color: var(--text-light-color);
     font-size: 11px;
     font-weight: 700;
     line-height: 1;

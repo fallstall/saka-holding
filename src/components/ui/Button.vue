@@ -47,7 +47,7 @@ defineProps<{
         justify-content: center;
 
         background-color: var(--gold-color);
-        color: var(--black-color);
+        color: var(--text-dark-color);
 
         &__text {
             font-size: 24px;
@@ -88,7 +88,7 @@ defineProps<{
             padding: 0 18px;
             border-radius: 4px;
             background-color: var(--gold-color);
-            color: var(--black-color);
+            color: var(--text-dark-color);
             justify-content: center;
             text-align: center;
 

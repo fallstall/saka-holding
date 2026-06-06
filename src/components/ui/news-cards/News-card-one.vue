@@ -67,7 +67,7 @@ defineProps<{
         background-size: cover;
     }
     &__title{
-        color: var(--bg-color);
+        color: var(--text-light-color);
         font-family: Montserrat;
         font-weight: 600;
         font-size: 18px;
@@ -85,12 +85,12 @@ defineProps<{
         font-family: Montserrat;
         font-style: normal;
         font-weight: 300;
-        color: var(--bg-color);
+        color: var(--text-light-color);
         font-size: 14px;
     }
     &__date{
         font-size: 12px;
-        color: var(--bg-color);
+        color: var(--text-light-color);
         margin-left: 30px;
         margin-top: 20px;
     }

@@ -10,6 +10,12 @@ import whiteFabric from '@/assets/images/whitefabric.png'
 import orangeFabric from '@/assets/images/orangefabric.png'
 import greenFabric from '@/assets/images/greenfabric.png'
 
+const props = withDefaults(defineProps<{
+    cardsOnly?: boolean
+}>(), {
+    cardsOnly: false,
+})
+
 const fabrics = [
     { image: blueFabric, title: 'Кулинарная гладь', price: '11,4$', width: '180 см' },
     { image: whiteFabric, title: 'Кулинарная гладь', price: '13$', width: '180 см' },
@@ -23,6 +29,10 @@ const visibleFabrics = computed(() =>
     fabrics.map((_, index) => fabrics[(activeIndex.value + index) % fabrics.length]!)
 )
 
+const displayedFabrics = computed(() =>
+    props.cardsOnly ? fabrics.slice(1) : visibleFabrics.value
+)
+
 function showPrev() {
     activeIndex.value = (activeIndex.value - 1 + fabrics.length) % fabrics.length
 }
@@ -33,11 +43,20 @@ function showNext() {
 </script>
 
 <template>
-    <section class="fabric-slider">
+    <section
+        class="fabric-slider"
+        :class="{ 'fabric-slider--cards-only': cardsOnly }"
+    >
         
         <div class="fabric-slider__inner">
-            <Title text="Недавно просмотренные" theme="left" class="fabric-slider__text-left"/>
+            <Title
+                v-if="!cardsOnly"
+                text="Недавно просмотренные"
+                theme="left"
+                class="fabric-slider__text-left"
+            />
             <button
+                v-if="!cardsOnly"
                 class="fabric-slider__arrow fabric-slider__arrow--prev"
                 type="button"
                 aria-label="Предыдущая ткань"
@@ -48,7 +67,7 @@ function showNext() {
 
             <div class="fabric-slider__viewport" aria-live="polite">
                 <article
-                    v-for="fabric in visibleFabrics"
+                    v-for="fabric in displayedFabrics"
                     :key="fabric.image"
                     class="fabric-slider__card"
                 >
@@ -74,6 +93,7 @@ function showNext() {
             </div>
 
             <button
+                v-if="!cardsOnly"
                 class="fabric-slider__arrow fabric-slider__arrow--next"
                 type="button"
                 aria-label="Следующая ткань"
@@ -87,7 +107,7 @@ function showNext() {
 
 <style scoped lang="scss">
 .fabric-slider {
-    background-color: #f6f6f6;
+    background-color: var(--surface-color);
     padding: 52px 0 70px;
 
     &__inner {
@@ -106,7 +126,7 @@ function showNext() {
         min-width: 0;
         overflow: hidden;
         border-radius: 8px;
-        background-color: #fff;
+        background-color: var(--bg-color);
     }
 
     &__image {
@@ -123,7 +143,7 @@ function showNext() {
 
     &__title {
         margin: 0 0 8px;
-        color: var(--black-color);
+        color: var(--text-dark-color);
         font-size: 15px;
         font-weight: 700;
         line-height: 1.25;
@@ -137,14 +157,14 @@ function showNext() {
     }
 
     &__price {
-        color: #233a76;
+        color: var(--price-color);
         font-size: 17px;
         font-weight: 700;
         line-height: 1;
     }
 
     &__width {
-        color: #9aa0a6;
+        color: var(--muted-color);
         font-size: 10px;
         font-weight: 400;
         line-height: 1;
@@ -178,7 +198,7 @@ function showNext() {
         padding: 0;
         border: 0;
         border-radius: 50%;
-        background-color: #fff;
+        background-color: var(--bg-color);
         cursor: pointer;
         transform: translateY(-50%);
         transition:
@@ -186,7 +206,7 @@ function showNext() {
             transform 0.2s ease;
 
         &:hover {
-            background-color: #ececec;
+            background-color: var(--control-hover-color);
             transform: translateY(-50%) scale(1.04);
         }
 
@@ -221,6 +241,24 @@ function showNext() {
             }
         }
     }
+
+    &--cards-only {
+        padding: 0;
+        background-color: var(--transparent-color);
+
+        .fabric-slider__inner {
+            width: 100%;
+        }
+
+        .fabric-slider__viewport {
+            grid-template-columns: repeat(3, 267.5px);
+            gap: 30px;
+        }
+
+        .fabric-slider__card {
+            width: 267.5px;
+        }
+    }
 }
 
 @include laptop {
@@ -241,6 +279,22 @@ function showNext() {
         &__arrow--next {
             right: -12px;
         }
+
+        &--cards-only {
+            .fabric-slider__inner {
+                width: 100%;
+            }
+
+            .fabric-slider__viewport {
+                grid-template-columns: repeat(2, minmax(0, 267.5px));
+                justify-content: center;
+            }
+
+            .fabric-slider__card {
+                width: 100%;
+                max-width: 267.5px;
+            }
+        }
     }
 }
 
@@ -258,6 +312,20 @@ function showNext() {
 
         &__card:nth-child(n + 2) {
             display: none;
+        }
+
+        &--cards-only {
+            .fabric-slider__inner {
+                width: 100%;
+            }
+
+            .fabric-slider__viewport {
+                grid-template-columns: minmax(0, 267.5px);
+            }
+
+            .fabric-slider__card:nth-child(n + 2) {
+                display: block;
+            }
         }
     }
 }

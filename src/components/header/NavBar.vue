@@ -56,7 +56,7 @@ const navItems = [
     .nav {
     width: 100%;
     height: 60px;
-    background-color: var(--black-80-color, #1f2a35);
+    background-color: var(--black-80-color);
 
     &__inner {
         min-height: 60px;
@@ -80,7 +80,7 @@ const navItems = [
 
         flex: 0 0 auto;
 
-        color: #ffffff;
+        color: var(--text-light-color);
         text-decoration: none;
         font-size: 14px;
         font-weight: 400;
@@ -99,18 +99,18 @@ const navItems = [
         width: 100%;
         height: 4px;
 
-        background-color: var(--gold-color, #d8bb7a);
+        background-color: var(--gold-color);
 
         opacity: 0;
         transition: opacity 0.2s ease;
         }
 
         &:hover {
-        color: var(--gold-color, #d8bb7a);
+        color: var(--gold-color);
         }
 
         &.router-link-exact-active {
-        color: #ffffff;
+        color: var(--text-light-color);
 
         &::after {
             opacity: 1;
