@@ -83,9 +83,17 @@ import Title from '@/components/ui/Title.vue';
 
   &__button {
     flex-shrink: 0;
-    width: 300px;
-    height: 59px;
+    width: 280px;
+    height: 58px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 24px;
+    
+    :deep(.btn__text) {
+        font-size: 16px;
   }
+}
 
   &__agreement {
     margin-top: 12px;
