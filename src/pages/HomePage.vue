@@ -8,6 +8,7 @@ import Title from '@/components/ui/Title.vue'
 import NewsCards from '../components/ui/news-cards/News-cards.vue'
 import cardPhoto from '@/components/ui/cardPhoto.vue'
 import cardPhotohome from '../assets/images/cardPhoto-img/homebg.png'
+import Order from '@/components/home/Order.vue'
 </script>
 
 <template>
@@ -18,5 +19,6 @@ import cardPhotohome from '../assets/images/cardPhoto-img/homebg.png'
     <cardPhoto theme="home" :img="cardPhotohome"/>
     <Title text="Saka Tekstil дорожит своей репутацией" theme="center" />
     <SertSlider />
+    <Order />
     <FabricSlider />
 </template>
