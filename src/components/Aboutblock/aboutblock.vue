@@ -21,7 +21,7 @@ import compbg from '../../assets/images/cardPhoto-img/compbg.png'
 <style lang="scss">
     .about{
         justify-self: center;
-        max-width: 1400px;
+        width: auto;
         display: flex;
         flex-direction: column;
         padding-top: 50px;
@@ -36,4 +36,12 @@ import compbg from '../../assets/images/cardPhoto-img/compbg.png'
             padding-bottom: 20px;
         }
     }
+@include mobile{
+    .about{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        
+    }
+}
 </style>

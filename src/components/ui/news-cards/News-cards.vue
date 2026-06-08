@@ -32,26 +32,36 @@ import Newscard from '@/components/ui/news-cards/News-card-one.vue';
         justify-content: center;
         gap: 40px;
 
-        &:not(:last-child) {
-            margin-bottom: 40px;
+        &:first-child{
+            
+            margin-bottom: 20px;
         }
     }
 }
 
-@include laptop {
-    .news-card {
-        width: min(100% - 32px, 680px);
-        padding: 48px 0;
-
-        &__row {
-            flex-direction: column;
-            align-items: center;
-            gap: 24px;
-
-            &:not(:last-child) {
-                margin-bottom: 24px;
-            }
-        }
+@include tablet{
+    .news-card__row:first-child{
+        flex-direction: row;
+    & > *:nth-child(3){
+        display: none;
+    } 
+    }
+    .news-card__row:not(:first-child){
+        display: none;
+    }
+}
+@include mobile{
+    .news-card{
+        margin-left: 40px;
+    }
+    .news-card__row:first-child{
+        flex-direction: column;
+    & > *:nth-child(3){
+        display: none;
+    } 
+    }
+    .news-card__row:not(:first-child){
+        display: none;
     }
 }
 </style>

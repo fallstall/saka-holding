@@ -48,4 +48,10 @@ defineProps<{
             font-weight: 600;
         }
     }
+@include mobile{
+    .color{
+        display: flex;
+        flex-direction: column;
+    }
+}
 </style>

@@ -71,7 +71,7 @@ defineProps<{
 
 .Photocard {
     width: 100%;
-    height: 640px;
+    height: 100%;
     &--home{
         background-color: var(--gray);
     }
@@ -167,6 +167,91 @@ defineProps<{
 
         .btn__icon{
             padding-right: 10px;
+        }
+    }
+}
+
+@include tablet{
+    .Photocard--home{
+        height: auto;
+        .Photocard__cont{
+        display: flex;
+        flex-direction: column-reverse;
+        align-items: center;
+        }
+        .Photocard__imgcont{
+            margin-left: 70px;
+            margin-top: 50px;
+            margin-bottom: 100px;
+        }
+        .Photocard__img{
+            width: 698px;
+            height: 639px
+        }
+    }
+    .Photocard--company{
+        max-width: 960px;
+        margin-left: 130px;
+        margin-bottom: 50px;
+        .Photocard__img{
+            width: 339px;
+            height: 576px
+        }
+        .Photocard__emblems{
+            position: absolute;
+            margin-left: -250px;
+        }
+    }
+    .Photocard__textcont{
+        margin-left: 20px;
+        margin-right: 150px;
+        margin-top: -60px;
+    }
+}
+
+@include mobile{
+    .Photocard--home{
+        .Photocard__img{
+            width: 360px;
+            height:639px;
+            
+        }
+        .Photocard__textcont{
+            margin-right: 80px;
+        }
+        .Photocard__imgcont{
+            margin-right: 90px;
+        }
+    }
+    .Photocard--company{
+        
+        .Photocard__cont{
+            display: flex;
+            flex-direction: column;
+
+            align-items: center;
+        }
+        .Photocard__emblems{
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            margin-left: 200px;
+            > :first-child {
+                margin-left: -150px;
+            }
+            > :nth-child(3) {
+                margin-left: -150px;
+            }
+
+        }
+        
+        .Photocard__textcont{
+            margin-left: -50px;
+            margin-top: 50px;
+        }
+        .Photocard__img{
+            width: 330px;
+            height: 576px;
         }
     }
 }

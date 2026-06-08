@@ -22,7 +22,7 @@ import Title from '../Title.vue';
             <span class="palette__title">Актуальная палитра “Saka Tekstil”<br>
             из 45+ цветов – поможет решить<br>
             любые задачи, стоящие перед вами</span>
-            <Warning/>
+            <Warning class="palette__warn"/>
         </div>
         <div class="palette__col">
             <div class="palette__row">
@@ -89,4 +89,30 @@ import Title from '../Title.vue';
             margin-bottom: 60px;
         }
     }
+@include tablet {
+    .palette{
+        margin-right: 50px
+    }
+    .palette__head{
+        display: flex;
+        flex-direction: column;
+    .palette__title{
+        margin-bottom: 30px;
+    }
+    }
+    .palette__row{
+        display: flex;
+        flex-direction: column;
+    }
+}
+@include mobile{
+    .palette__warn{
+        display: none;
+    }
+
+    .palette__col{
+        display: flex;
+        flex-direction: row;
+    }
+}
 </style>

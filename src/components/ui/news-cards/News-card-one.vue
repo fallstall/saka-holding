@@ -55,7 +55,7 @@ defineProps<{
     background-color: var(--black-color);
     width: 360px;
     height: 400px;
-    border-radius: var(--border-radius-xs);
+    border-radius: 16px;
     flex-direction: column;
 
     &__head{
@@ -65,6 +65,7 @@ defineProps<{
         height: 240px;
         background-position: center;
         background-size: cover;
+        border-radius: 16px;
     }
     &__title{
         color: var(--text-light-color);
