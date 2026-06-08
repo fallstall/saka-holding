@@ -25,6 +25,7 @@ import compbg from '../../assets/images/cardPhoto-img/compbg.png'
         display: flex;
         flex-direction: column;
         padding-top: 50px;
+        padding-left: 150px;
 
         &__title{
             margin-left: -140px;

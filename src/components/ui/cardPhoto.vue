@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import Button from '../ui/Button.vue' 
 import Icon from '../../assets/images/ArrowRight.png'
+import AboutEmblem from '../Aboutblock/aboutEmblem.vue';
 defineProps<{
     theme?: 'home' | 'company' 
     img?: string
@@ -54,6 +55,11 @@ defineProps<{
                         трикотажных полотен высокого качества<br>
                         более, чем в 45 цветовых вариациях
                     </p>
+                </div>
+                <div v-if="theme==='company'" class="Photocard__emblems">
+                    <AboutEmblem theme="big" title="30" text="Лет на рынке текстиля"/>
+                    <AboutEmblem theme="big" title="40+" text="Ассортимент товаров в наличии"/>
+                    <AboutEmblem theme="small" title="10 000+" text="Клиентов выбирают нашу компанию"/>
                 </div>
                 <div v-if="theme==='home'" class="Photocard__button"><Button theme="full" text="Смотреть каталог" :icon="Icon" class="Photocard__btn-text" /></div>
             </div>
@@ -140,6 +146,12 @@ defineProps<{
         margin-bottom: 10px;
         font-size: 18px;
         font-weight: 400;
+    }
+
+    &__emblems{
+        display: flex;
+        flex-direction: row;
+        padding-top: 50px;
     }
 
     &__btn-text {
