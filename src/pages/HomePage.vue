@@ -9,6 +9,7 @@ import NewsCards from '../components/ui/news-cards/News-cards.vue'
 import cardPhoto from '@/components/ui/cardPhoto.vue'
 import cardPhotohome from '../assets/images/cardPhoto-img/homebg.png'
 import Order from '@/components/home/Order.vue'
+import Palette from '../components/ui/palette/Palette.vue'
 </script>
 
 <template>
@@ -19,6 +20,7 @@ import Order from '@/components/home/Order.vue'
     <cardPhoto theme="home" :img="cardPhotohome"/>
     <Title text="Saka Tekstil дорожит своей репутацией" theme="center" />
     <SertSlider />
+    <Palette/>
     <Order />
     <FabricSlider />
 </template>

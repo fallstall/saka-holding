@@ -62,6 +62,8 @@ defineProps<{
     &__img{
         width: 520px;
         height: 640px;
+        object-fit: cover;
+        border-top-right-radius: 10px ;
         
     }
 
