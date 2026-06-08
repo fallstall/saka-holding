@@ -58,7 +58,6 @@ import Tekstil3 from '@/assets/images/SakaTekstil/Tekstil3.png'
     </div>
   </section>
 </template>
-
 <style scoped lang="scss">
 .quality-section {
   width: 100%;
