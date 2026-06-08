@@ -23,6 +23,8 @@ defineProps<{
                     и комфортно получать текстильную<br> продукцию
                     <span v-if="theme === 'home'" class="Photocard__colortext">высокого качества<br> 
                         по адекватной стоимости</span></p>
+                <p v-if="theme === 'company'" class="Photocard__text">Saka Tekstil - производство и продажа<br>
+                    турецкого трикотажного полотна</p>
                 <div v-if="theme==='home'" class="Photocard__text-small">
                     <div class="Photocard__row">
                         <div class="Photocard__line"></div>
@@ -36,6 +38,22 @@ defineProps<{
                             поставщиком и производителем турецкого<br>
                              трикотажного полотна по всему миру</span>
                     </div>
+                </div>
+                <div v-if="theme==='company'" class="Photocard__comp-text">
+                    <p class="Photocard__comp-el">
+                        Мы осуществляем продажу ткани от рулона<br> и нарезку кашкорсе от 5%-20%
+                    </p>
+                    <p class="Photocard__comp-el">
+                        Наша команда следит за трендами в мире<br> 
+                        трикотажа, мы постоянно обновляем наш<br> 
+                        ассортимент и регулярно контролируем<br>
+                         наличие ткани на складе
+                    </p>
+                    <p class="Photocard__comp-el">
+                        Мы предлагаем клиентам различные виды<br> 
+                        трикотажных полотен высокого качества<br>
+                        более, чем в 45 цветовых вариациях
+                    </p>
                 </div>
                 <div v-if="theme==='home'" class="Photocard__button"><Button theme="full" text="Смотреть каталог" :icon="Icon" class="Photocard__btn-text" /></div>
             </div>
@@ -111,6 +129,17 @@ defineProps<{
     &__text-el{
         margin-left: 15px;
         font-size: 18px;
+    }
+
+    &__comp-text{
+            display: flex;
+            flex-direction: column;
+        }
+
+    &__comp-el{
+        margin-bottom: 10px;
+        font-size: 18px;
+        font-weight: 400;
     }
 
     &__btn-text {
