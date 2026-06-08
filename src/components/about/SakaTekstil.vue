@@ -58,6 +58,7 @@ import Tekstil3 from '@/assets/images/SakaTekstil/Tekstil3.png'
     </div>
   </section>
 </template>
+
 <style scoped lang="scss">
 .quality-section {
   width: 100%;
@@ -101,16 +102,18 @@ import Tekstil3 from '@/assets/images/SakaTekstil/Tekstil3.png'
   }
 
   &__card-title {
+    margin: 0;  
     font-size: 14px;
     font-weight: 700;
     color: var(--black-color);
-    margin-bottom: 0px;
+
   }
 
   &__card-text {
     font-size: 14px;
     color: var(--black-color);
     line-height: 1.5;
+    margin: 0;
   }
 }
 </style>

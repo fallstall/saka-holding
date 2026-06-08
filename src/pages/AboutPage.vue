@@ -10,7 +10,7 @@ import AboutInfoCard from '@/components/about/AboutInfoCard.vue';
 <template>
     <Aboutblock />
     <SakaTekstil />
-    <AboutInfoCard
+    <AboutInfoCard />
     <ClientSlider />
     <SertSlider />
     <FabricSlider />
