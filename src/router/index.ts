@@ -5,6 +5,7 @@ import {
 import HomePage from "@/pages/HomePage.vue"
 import CatalogPage from "@/pages/CatalogPage.vue"
 import AboutPage from "@/pages/AboutPage.vue"
+import MorePage from "@/pages/MorePage.vue"
 // поменяла с "../pages/HomePage.vue"
 
 export const router = createRouter({
@@ -13,6 +14,7 @@ export const router = createRouter({
         { path: '/', component: HomePage},
         { path: '/catalog', component: CatalogPage},
         { path: '/about', component: AboutPage},
+        { path: '/more', component: MorePage},
     ]
 })
 export default router
