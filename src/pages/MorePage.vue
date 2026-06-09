@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import Order from '@/components/home/Order.vue';
+import OrderBanner from '@/components/more/OrderBanner.vue';
 import Calck from '@/components/more/Calck.vue';
 
 
@@ -7,7 +7,7 @@ import Calck from '@/components/more/Calck.vue';
 
 <template>
 <Calck />
-<Order />
+<OrderBanner />
 
 
 </template>

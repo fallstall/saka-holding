@@ -1,4 +1,3 @@
-<!-- components/home/OrderBanner.vue -->
 <script setup lang="ts">
 import Title from '@/components/ui/Title.vue'
 import Button from '@/components/ui/Button.vue'
@@ -9,20 +8,15 @@ import arrowIcon from '@/assets/images/ArrowRight.png'
   <div class="order-banner">
     <div class="order-banner__content">
       <Title 
-        tag="p"
-        theme="left"
+        text="Подробнее об условиях окраса под заказ можно уточнить у вашего персонального менеджера"
+        theme="center"
         class="order-banner__text"
-      >
-        Подробнее об условиях окраса под заказ можно<br>
-        уточнить у вашего персонального менеджера
-      </Title>
-      
-      <!-- Кнопка справа -->
-      <Button 
+      />
+      <Button
+        class="order-banner__button"
         theme="full"
         text="Оставить заявку"
         :icon="arrowIcon"
-        class="order-banner__button"
       />
     </div>
   </div>
@@ -32,7 +26,7 @@ import arrowIcon from '@/assets/images/ArrowRight.png'
 .order-banner {
   width: 1160px;
   height: 170px;
-  background-color: #f5f5f5;
+  background-color:var(--gray);
   border-radius: 16px;
   display: flex;
   align-items: center;
@@ -49,15 +43,18 @@ import arrowIcon from '@/assets/images/ArrowRight.png'
   }
 
   &__text {
-    font-size: 24px;
-    font-weight: 600;
-    color: #1a1f29;
-    max-width: 600px;
-    line-height: 1.3;
+    font-size: 20px;
+    max-width: 650px;
+    text-align: left;
   }
 
   &__button {
-    flex-shrink: 0;
+    width: 310px;
+    height: 60px;
+  :deep(.btn__text) {
+    font-size: 16px;
+    white-space: nowrap;
+  }
   }
 }
 </style>
