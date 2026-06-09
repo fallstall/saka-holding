@@ -77,6 +77,7 @@ defineProps<{
     }
     &--company{
         background-color: var(--bg-color);
+        padding-bottom: 50px;
     }
     &__cont{
         display: flex;
