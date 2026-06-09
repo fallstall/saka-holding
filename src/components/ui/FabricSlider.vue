@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { computed, ref } from 'vue'
+import { useRouter } from 'vue-router'
 
 import Title from '@/components/ui/Title.vue';
 
@@ -24,6 +25,7 @@ const fabrics = [
 ]
 
 const activeIndex = ref(0)
+const router = useRouter()
 
 const visibleFabrics = computed(() =>
     fabrics.map((_, index) => fabrics[(activeIndex.value + index) % fabrics.length]!)
@@ -39,6 +41,12 @@ function showPrev() {
 
 function showNext() {
     activeIndex.value = (activeIndex.value + 1) % fabrics.length
+}
+
+function openFabric() {
+    if (props.cardsOnly) {
+        router.push('/more')
+    }
 }
 </script>
 
@@ -87,6 +95,7 @@ function showNext() {
                             theme="full"
                             text="Подробнее"
                             :icon="arrowIcon"
+                            @click="openFabric"
                         />
                     </div>
                 </article>
