@@ -10,7 +10,7 @@ import Tekstil3 from '@/assets/images/SakaTekstil/Tekstil3.png'
   <section class="quality-section">
     <div class="quality-section__container">
       <Title 
-        text="Saka Tekstil работает с трикотажными полотнами разного качества:" 
+        text="Наша главная задача - не просто предоставить качественную ткань, но и оказать каждому заказчику высокий уровень клиентского сервиса" 
         theme="left" 
         class="quality-section__title"
       />
