@@ -9,12 +9,12 @@ import Title from '@/components/ui/Title.vue';
   <div class="feedback-form">
     <div class="feedback-form__content">
         <Title 
-          text="Фабрика «Saka Tekstil» осуществляет прокрас текстиля на заказ на самых выгодных условиях" 
+          text="Требуется закупка ткани от 500кг?" 
           theme="center" 
           class="feedback-form__title"
         />
         <p class="feedback-form__subtitle">
-          Просто оставьте заявку на сайте и мы свяжемся с вами в ближайшее время
+          Оставьте заявку на сайте и мы свяжемся с вами в ближайшее время
         </p>
       <div class="feedback-form__form">
           <Input placeholder="Ваше имя" />
@@ -58,7 +58,7 @@ import Title from '@/components/ui/Title.vue';
   }
 
   &__title {
-    color:var(--bg-color);
+    color: var(--bg-color);
     margin-bottom: 8px;
     max-width: 800px;
   }
@@ -98,7 +98,7 @@ import Title from '@/components/ui/Title.vue';
   &__agreement {
     margin-top: 12px;
     font-size: 12px;
-    color:var(--on-dark-70-color);
+    color: var(--on-dark-70-color);
     text-align: center;
     opacity: 0.8;
   }
