@@ -1,68 +1,9 @@
 <script setup lang="ts">
-import { computed, ref } from 'vue'
-
-import blueFabric from '@/assets/images/bluefabric.png'
-import greenFabric from '@/assets/images/greenfabric.png'
 import orangeFabric from '@/assets/images/orangefabric.png'
 import ShoppingCart from '@/assets/images/ShoppingCart.png'
-import whiteFabric from '@/assets/images/whitefabric.png'
-import black from '@/assets/images/t-shirts/black.png'
-import blue from '@/assets/images/t-shirts/blue.png'
-import darkBlue from '@/assets/images/t-shirts/dark-blue.png'
-import darkGrey from '@/assets/images/t-shirts/dark-grey.png'
-import green from '@/assets/images/t-shirts/green.png'
-import grey from '@/assets/images/t-shirts/grey.png'
-import lightBlue from '@/assets/images/t-shirts/light-blue.png'
-import orange from '@/assets/images/t-shirts/orange.png'
-import purple from '@/assets/images/t-shirts/purple.png'
-import red from '@/assets/images/t-shirts/red.png'
-import white from '@/assets/images/t-shirts/white.png'
-import yellow from '@/assets/images/t-shirts/yellow.png'
 import Button from '@/components/ui/Button.vue'
-
-const gallery = [
-  { image: orangeFabric, alt: 'Оранжевая кулирная гладь' },
-  { image: whiteFabric, alt: 'Белая кулирная гладь' },
-  { image: greenFabric, alt: 'Зелёная кулирная гладь' },
-  { image: blueFabric, alt: 'Голубая кулирная гладь' },
-]
-
-const colors = [
-  darkBlue,
-  grey,
-  white,
-  black,
-  darkGrey,
-  blue,
-  lightBlue,
-  orange,
-  green,
-  yellow,
-  purple,
-  red,
-]
-
-const specifications = [
-  ['Материал:', 'Материальный'],
-  ['Качество:', 'Хорошее'],
-  ['Состав:', '92% хб + 8% лайкра'],
-  ['Плотность:', 'Плотная'],
-  ['Ширина рулона:', '150 см'],
-  ['В 1 кг:', '1 метр'],
-  ['В 1 рулоне:', '1 рулон'],
-  ['Производство:', 'Турция'],
-]
-
-const activeIndex = ref(0)
-const currentImage = computed(() => gallery[activeIndex.value]!)
-
-function showPrevious() {
-  activeIndex.value = (activeIndex.value - 1 + gallery.length) % gallery.length
-}
-
-function showNext() {
-  activeIndex.value = (activeIndex.value + 1) % gallery.length
-}
+import ProductColors from '@/components/more/ProductColors.vue'
+import SliderBottom from '@/components/more/SliderBottom.vue'
 </script>
 
 <template>
@@ -71,40 +12,11 @@ function showNext() {
       <div class="product-page__gallery">
         <img
           class="product-page__main-image"
-          :src="currentImage.image"
-          :alt="currentImage.alt"
+          :src="orangeFabric"
+          alt="Оранжевая кулирная гладь"
         >
 
-        <div class="product-page__thumbnails">
-          <button
-            class="product-page__arrow product-page__arrow--previous"
-            type="button"
-            aria-label="Предыдущая ткань"
-            @click="showPrevious"
-          >
-            <span aria-hidden="true"></span>
-          </button>
-
-          <button
-            v-for="(item, index) in gallery"
-            :key="item.image"
-            class="product-page__thumbnail"
-            :class="{ 'product-page__thumbnail--active': index === activeIndex }"
-            type="button"
-            @click="activeIndex = index"
-          >
-            <img :src="item.image" :alt="item.alt">
-          </button>
-
-          <button
-            class="product-page__arrow product-page__arrow--next"
-            type="button"
-            aria-label="Следующая ткань"
-            @click="showNext"
-          >
-            <span aria-hidden="true"></span>
-          </button>
-        </div>
+        <SliderBottom embedded static-view />
       </div>
 
       <div class="product-page__details">
@@ -121,21 +33,7 @@ function showNext() {
           <span>/ кг</span>
         </p>
 
-        <div class="product-page__colors">
-          <h2>Цвет</h2>
-          <div class="product-page__color-grid">
-            <button
-              v-for="(color, index) in colors"
-              :key="color"
-              class="product-page__color"
-              :class="{ 'product-page__color--active': index === 7 }"
-              type="button"
-              :aria-label="`Цвет ${index + 1}`"
-            >
-              <img :src="color" alt="">
-            </button>
-          </div>
-        </div>
+        <ProductColors class="product-page__colors" />
 
         <div class="product-page__actions">
           <div class="product-page__counter">
@@ -156,14 +54,14 @@ function showNext() {
       <aside class="product-page__specs">
         <h2 class="product-page__specs-title">Характеристики</h2>
         <dl class="product-page__specs-list">
-          <div
-            v-for="[label, value] in specifications"
-            :key="label"
-            class="product-page__spec"
-          >
-            <dt>{{ label }}</dt>
-            <dd>{{ value }}</dd>
-          </div>
+          <div class="product-page__spec"><dt>Материал:</dt><dd>Материальный</dd></div>
+          <div class="product-page__spec"><dt>Качество:</dt><dd>Хорошее</dd></div>
+          <div class="product-page__spec"><dt>Состав:</dt><dd>92% хб + 8% лайкра</dd></div>
+          <div class="product-page__spec"><dt>Плотность:</dt><dd>Плотная</dd></div>
+          <div class="product-page__spec"><dt>Ширина рулона:</dt><dd>150 см</dd></div>
+          <div class="product-page__spec"><dt>В 1 кг:</dt><dd>1 метр</dd></div>
+          <div class="product-page__spec"><dt>В 1 рулоне:</dt><dd>1 рулон</dd></div>
+          <div class="product-page__spec"><dt>Производство:</dt><dd>Турция</dd></div>
         </dl>
       </aside>
     </div>
@@ -196,76 +94,6 @@ function showNext() {
     display: block;
     border-radius: 14px;
     object-fit: cover;
-  }
-
-  &__thumbnails {
-    position: relative;
-    margin-top: 16px;
-    display: grid;
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-    gap: 14px;
-  }
-
-  &__thumbnail {
-    aspect-ratio: 1 / 1;
-    min-width: 0;
-    padding: 0;
-    overflow: hidden;
-    border: 2px solid transparent;
-    border-radius: 12px;
-    background: none;
-    cursor: pointer;
-
-    img {
-      width: 100%;
-      height: 100%;
-      display: block;
-      object-fit: cover;
-    }
-
-    &--active {
-      border-color: var(--gold-color);
-    }
-  }
-
-  &__arrow {
-    position: absolute;
-    top: 50%;
-    z-index: 2;
-    width: 40px;
-    height: 40px;
-    padding: 0;
-    border: 0;
-    border-radius: 50%;
-    background-color: var(--bg-color);
-    cursor: pointer;
-    transform: translateY(-50%);
-
-    span {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      width: 10px;
-      height: 10px;
-      border-top: 2px solid var(--black-color);
-      border-left: 2px solid var(--black-color);
-    }
-
-    &--previous {
-      left: -18px;
-
-      span {
-        transform: translate(-35%, -50%) rotate(-45deg);
-      }
-    }
-
-    &--next {
-      right: -18px;
-
-      span {
-        transform: translate(-65%, -50%) rotate(135deg);
-      }
-    }
   }
 
   &__details {
@@ -314,42 +142,6 @@ function showNext() {
     }
   }
 
-  &__colors {
-    h2 {
-      margin: 0 0 10px;
-      color: var(--text-dark-color);
-      font-size: 16px;
-      font-weight: 500;
-    }
-  }
-
-  &__color-grid {
-    width: 205px;
-    display: grid;
-    grid-template-columns: repeat(6, 26px);
-    gap: 8px;
-  }
-
-  &__color {
-    width: 26px;
-    height: 24px;
-    padding: 0;
-    border: 0;
-    background: none;
-    cursor: pointer;
-
-    img {
-      width: 100%;
-      height: 100%;
-      display: block;
-      object-fit: contain;
-    }
-
-    &--active {
-      filter: drop-shadow(0 0 2px var(--darkGold));
-    }
-  }
-
   &__actions {
     margin-top: 30px;
     display: flex;
@@ -375,7 +167,6 @@ function showNext() {
 
     span {
       min-width: 18px;
-      color: var(--gray-80);
       font-size: 14px;
       text-align: center;
     }
@@ -474,7 +265,6 @@ function showNext() {
     &__counter {
       width: 100%;
       justify-content: space-between;
-      border-radius: 28px;
     }
 
     &__cart-button {
@@ -531,23 +321,6 @@ function showNext() {
 
     &__price {
       margin-bottom: 4px;
-    }
-
-    &__thumbnails {
-      gap: 8px;
-    }
-
-    &__arrow {
-      width: 34px;
-      height: 34px;
-
-      &--previous {
-        left: -8px;
-      }
-
-      &--next {
-        right: -8px;
-      }
     }
 
     &__specs-list {

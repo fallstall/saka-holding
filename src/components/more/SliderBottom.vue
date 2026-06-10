@@ -6,6 +6,14 @@ import greenFabric from '@/assets/images/greenfabric.png'
 import orangeFabric from '@/assets/images/orangefabric.png'
 import whiteFabric from '@/assets/images/whitefabric.png'
 
+const props = withDefaults(defineProps<{
+    embedded?: boolean
+    staticView?: boolean
+}>(), {
+    embedded: false,
+    staticView: false,
+})
+
 const fabrics = [
     { image: whiteFabric, alt: 'Белая ткань' },
     { image: greenFabric, alt: 'Зелёная ткань' },
@@ -16,7 +24,9 @@ const fabrics = [
 const activeIndex = ref(0)
 
 const visibleFabrics = computed(() =>
-    fabrics.map((_, index) => fabrics[(activeIndex.value + index) % fabrics.length]!)
+    props.staticView
+        ? fabrics
+        : fabrics.map((_, index) => fabrics[(activeIndex.value + index) % fabrics.length]!)
 )
 
 function showPrevious() {
@@ -29,9 +39,14 @@ function showNext() {
 </script>
 
 <template>
-    <section class="slider-bottom" aria-label="Другие ткани">
+    <section
+        class="slider-bottom"
+        :class="{ 'slider-bottom--embedded': embedded }"
+        aria-label="Другие ткани"
+    >
         <div class="slider-bottom__carousel">
             <button
+                v-if="!staticView"
                 class="slider-bottom__arrow slider-bottom__arrow--previous"
                 type="button"
                 aria-label="Предыдущие ткани"
@@ -39,6 +54,13 @@ function showNext() {
             >
                 <span aria-hidden="true"></span>
             </button>
+            <span
+                v-else
+                class="slider-bottom__arrow slider-bottom__arrow--previous"
+                aria-hidden="true"
+            >
+                <span></span>
+            </span>
 
             <div class="slider-bottom__track" aria-live="polite">
                 <img
@@ -51,6 +73,7 @@ function showNext() {
             </div>
 
             <button
+                v-if="!staticView"
                 class="slider-bottom__arrow slider-bottom__arrow--next"
                 type="button"
                 aria-label="Следующие ткани"
@@ -58,13 +81,20 @@ function showNext() {
             >
                 <span aria-hidden="true"></span>
             </button>
+            <span
+                v-else
+                class="slider-bottom__arrow slider-bottom__arrow--next"
+                aria-hidden="true"
+            >
+                <span></span>
+            </span>
         </div>
     </section>
 </template>
 
 <style scoped lang="scss">
 .slider-bottom {
-    width: min(1160px, calc(100vw - 48px));
+    width: min(1160px, calc(100% - 48px));
     margin: 50px auto 70px;
 
     &__carousel {
@@ -100,21 +130,7 @@ function showNext() {
         border: 0;
         border-radius: 50%;
         background-color: var(--bg-color);
-        cursor: pointer;
         transform: translateY(-50%);
-        transition:
-            background-color 0.2s ease,
-            transform 0.2s ease;
-
-        &:hover {
-            background-color: var(--control-hover-color);
-            transform: translateY(-50%) scale(1.04);
-        }
-
-        &:focus-visible {
-            outline: 2px solid var(--gold-color);
-            outline-offset: 3px;
-        }
 
         span {
             position: absolute;
@@ -142,6 +158,45 @@ function showNext() {
             }
         }
     }
+
+    button.slider-bottom__arrow {
+        cursor: pointer;
+        transition:
+            background-color 0.2s ease,
+            transform 0.2s ease;
+
+        &:hover {
+            background-color: var(--control-hover-color);
+            transform: translateY(-50%) scale(1.04);
+        }
+
+        &:focus-visible {
+            outline: 2px solid var(--gold-color);
+            outline-offset: 3px;
+        }
+    }
+
+    &--embedded {
+        width: 100%;
+        margin: 16px 0 0;
+
+        .slider-bottom__carousel {
+            width: 100%;
+            height: auto;
+        }
+
+        .slider-bottom__track {
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            gap: 14px;
+        }
+
+        .slider-bottom__image {
+            width: 100%;
+            height: auto;
+            aspect-ratio: 1 / 1;
+            border-radius: 12px;
+        }
+    }
 }
 
 @include tablet {
@@ -166,12 +221,19 @@ function showNext() {
         &__arrow--next {
             right: -16px;
         }
+
+        &--embedded {
+            .slider-bottom__track {
+                grid-template-columns: repeat(4, minmax(0, 1fr));
+                gap: 8px;
+            }
+        }
     }
 }
 
 @include mobile {
     .slider-bottom {
-        width: calc(100vw - 64px);
+        width: calc(100% - 64px);
 
         &__track {
             grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -183,6 +245,18 @@ function showNext() {
 
             &:nth-child(4) {
                 display: none;
+            }
+        }
+
+        &--embedded {
+            width: 100%;
+
+            .slider-bottom__track {
+                grid-template-columns: repeat(4, minmax(0, 1fr));
+            }
+
+            .slider-bottom__image:nth-child(4) {
+                display: block;
             }
         }
     }
