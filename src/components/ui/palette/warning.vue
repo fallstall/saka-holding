@@ -41,4 +41,27 @@
             font-weight: 400;
         }
     }
+
+@include tablet {
+    .warning {
+        height: auto;
+        min-height: 100px;
+        padding: 18px;
+
+        &__img {
+            width: 48px;
+            height: 48px;
+            margin-left: 0;
+        }
+
+        &__title {
+            margin: 0 0 0 18px;
+            font-size: 13px;
+        }
+
+        &__light {
+            font-size: 13px;
+        }
+    }
+}
 </style>

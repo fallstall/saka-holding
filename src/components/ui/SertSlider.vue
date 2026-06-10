@@ -152,29 +152,12 @@ function showNext() {
     }
 }
 
-@include laptop {
-    .sert-slider {
-        padding: 40px 0 56px;
-
-        &__inner {
-            padding: 0 58px;
-        }
-
-        &__viewport {
-            grid-template-columns: repeat(2, minmax(0, 1fr));
-            gap: 20px;
-        }
-
-        &__item {
-            height: 330px;
-        }
-    }
-}
-
 @include tablet {
     .sert-slider {
+        padding: 24px 0 44px;
+
         &__inner {
-            padding: 0 54px;
+            padding: 0 48px;
         }
 
         &__viewport {
@@ -182,11 +165,30 @@ function showNext() {
         }
 
         &__item {
-            height: 360px;
+            height: 330px;
         }
 
         &__item:nth-child(n + 2) {
             display: none;
+        }
+    }
+}
+
+@include mobile {
+    .sert-slider {
+        padding-bottom: 36px;
+
+        &__inner {
+            padding: 0 40px;
+        }
+
+        &__item {
+            height: 260px;
+        }
+
+        &__arrow {
+            width: 36px;
+            height: 36px;
         }
     }
 }

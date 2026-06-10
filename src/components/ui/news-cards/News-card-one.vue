@@ -97,9 +97,50 @@ defineProps<{
     }
 }
 
+@include tablet {
+    .newscard-one {
+        width: 100%;
+        height: 300px;
+        border-radius: 8px;
+
+        &__head {
+            height: 180px;
+            border-radius: 8px;
+        }
+
+        &__button {
+            width: 34px;
+            height: 34px;
+            margin-top: 14px;
+            margin-right: 14px;
+        }
+
+        &__title {
+            margin: 68px 16px 0;
+            font-size: 13px;
+        }
+
+        &__text {
+            margin: 12px 16px 0;
+            font-size: 10px;
+            line-height: 1.35;
+
+            br {
+                display: none;
+            }
+        }
+
+        &__date {
+            margin: auto 16px 14px;
+            font-size: 9px;
+        }
+    }
+}
+
 @include mobile {
     .newscard-one {
         width: 100%;
+        height: 320px;
 
         &__title,
         &__text,

@@ -8,6 +8,7 @@ import Emblem from '@/components/header/Emblem.vue';
 import Login from '@/components/header/Login.vue';
 import NavBar from '@/components/header/NavBar.vue';
 import Themebtn from '@/components/header/Themebtn.vue';
+import BurgerMenu from '@/components/header/BurgerMenu.vue';
 // images
 import arrowIcon from '@/assets/images/cart.png';
 </script>
@@ -31,7 +32,8 @@ import arrowIcon from '@/assets/images/cart.png';
         </div>
         <Login />
         <Phone />
-        <Themebtn />
+        <Themebtn class="header__theme" />
+        <BurgerMenu />
       </div>
     </div>
     <NavBar />
@@ -119,18 +121,32 @@ import arrowIcon from '@/assets/images/cart.png';
 
 }
 
-  @include laptop {
+  @include tablet{
     .header {
-      
-      
+        width: 100%;
+        min-height: 118px;
+        overflow: visible;
 
         &__top {
-            height: 120px;
+          width: 100%;
+          height: 118px;
+          padding: 0 20px;
         }
 
         &__text {
           display: none;
         }
+
+        &__actions {
+          flex: 0 0 auto;
+          padding-left: 24px;
+          gap: 20px;
+        }
+
+        &__theme {
+          display: none;
+        }
+
         &__language {
           display: none;
         }
@@ -140,7 +156,59 @@ import arrowIcon from '@/assets/images/cart.png';
         &__cart-button {
           display: none;
         }
+
+        :deep(.logo) {
+          padding-right: 0;
+        }
+
+        :deep(.logo img) {
+          width: 82px;
+        }
+
+        :deep(.emblems) {
+          gap: 8px;
+          margin-left: 16px;
+        }
+
+        :deep(.emblems img) {
+          width: 34px;
+          height: 34px;
+        }
     }
+}
+
+@include mobile {
+  .header {
+    width: 320px;
+    max-width: 100%;
+    min-height: 92px;
+
+    &__top {
+      width: 100%;
+      height: 92px;
+      padding: 0 12px;
+    }
+
+    &__actions {
+      margin-left: auto;
+      padding-left: 0;
+      gap: 0;
+    }
+
+    :deep(.logo img) {
+      width: 58px;
+    }
+
+    :deep(.emblems) {
+      gap: 5px;
+      margin-left: 8px;
+    }
+
+    :deep(.emblems img) {
+      width: 25px;
+      height: 25px;
+    }
+  }
 }
 
 </style>

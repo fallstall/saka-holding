@@ -40,28 +40,35 @@ import Newscard from '@/components/ui/news-cards/News-card-one.vue';
 }
 
 @include tablet{
-    .news-card__row:first-child{
-        flex-direction: row;
-    & > *:nth-child(3){
-        display: none;
-    } 
-    }
-    .news-card__row:not(:first-child){
-        display: none;
+    .news-card {
+        width: calc(100% - 32px);
+        padding: 32px 0;
+
+        &__row:first-child {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 12px;
+
+            & > *:nth-child(3) {
+                display: none;
+            }
+        }
+
+        &__row:not(:first-child) {
+            display: none;
+        }
     }
 }
 @include mobile{
     .news-card{
-        margin-left: 40px;
-    }
-    .news-card__row:first-child{
-        flex-direction: column;
-    & > *:nth-child(3){
-        display: none;
-    } 
-    }
-    .news-card__row:not(:first-child){
-        display: none;
+        width: calc(100% - 24px);
+        margin: 0 auto;
+        padding: 24px 0;
+
+        &__row:first-child {
+            grid-template-columns: 1fr;
+            gap: 12px;
+        }
     }
 }
 </style>

@@ -48,10 +48,56 @@ defineProps<{
             font-weight: 600;
         }
     }
+@include tablet {
+    .color {
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 8px;
+
+        &__img {
+            width: 88px;
+            max-width: 100%;
+            height: auto;
+            aspect-ratio: 1 / 1;
+            margin-right: 0;
+        }
+
+        &__el {
+            min-width: 0;
+            align-items: center;
+        }
+
+        &__name {
+            width: 100%;
+            margin: 8px 0 0;
+            font-size: 10px;
+            text-align: center;
+        }
+    }
+}
+
 @include mobile{
-    .color{
-        display: flex;
-        flex-direction: column;
+    .color {
+        display: contents;
+
+        &__el {
+            min-width: 0;
+            align-items: center;
+        }
+
+        &__img {
+            width: 72px;
+            max-width: 100%;
+        }
+
+        &__name {
+            width: 100%;
+            margin: 7px 0 0;
+            font-size: 9px;
+            line-height: 1.25;
+            text-align: center;
+        }
     }
 }
 </style>

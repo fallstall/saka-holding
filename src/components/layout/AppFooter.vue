@@ -302,7 +302,7 @@ const informationLinks = [
     }
 }
 
-@include laptop {
+@include tablet {
     .footer {
         &__inner {
             width: min(100% - 48px, 960px);
@@ -318,13 +318,14 @@ const informationLinks = [
 @include tablet {
     .footer {
         &__inner {
+            width: calc(100% - 32px);
             min-height: auto;
-            padding: 42px 0 32px;
+            padding: 32px 0 26px;
         }
 
         &__top {
             grid-template-columns: repeat(2, minmax(0, 1fr));
-            gap: 42px 32px;
+            gap: 28px 20px;
         }
 
         &__contacts {
@@ -337,10 +338,10 @@ const informationLinks = [
         }
 
         &__bottom {
-            margin-top: 48px;
+            margin-top: 32px;
             align-items: flex-start;
             flex-direction: column;
-            gap: 30px;
+            gap: 22px;
         }
     }
 }

@@ -44,9 +44,7 @@ function showNext() {
 }
 
 function openFabric() {
-    if (props.cardsOnly) {
-        router.push('/more')
-    }
+    router.push('/more')
 }
 </script>
 
@@ -270,15 +268,30 @@ function openFabric() {
     }
 }
 
-@include laptop {
+@include tablet {
     .fabric-slider {
+        overflow: hidden;
+        padding: 38px 0 52px;
+
         &__inner {
-            width: min(100% - 32px, 760px);
+            width: calc(100% - 72px);
         }
 
         &__viewport {
             grid-template-columns: repeat(2, minmax(0, 1fr));
-            gap: 24px;
+            gap: 16px;
+        }
+
+        &__body {
+            padding: 14px;
+        }
+
+        &__card:nth-child(n + 3) {
+            display: none;
+        }
+
+        &__button {
+            width: 100%;
         }
 
         &__arrow--prev {
@@ -303,16 +316,20 @@ function openFabric() {
                 width: 100%;
                 max-width: 267.5px;
             }
+
+            .fabric-slider__card:nth-child(n + 3) {
+                display: block;
+            }
         }
     }
 }
 
 @include mobile {
     .fabric-slider {
-        padding: 38px 0 52px;
+        padding: 30px 0 42px;
 
         &__inner {
-            width: min(100% - 76px, 320px);
+            width: calc(100% - 32px);
         }
 
         &__viewport {
@@ -321,6 +338,18 @@ function openFabric() {
 
         &__card:nth-child(n + 2) {
             display: none;
+        }
+
+        &__body {
+            padding: 16px;
+        }
+
+        &__arrow--prev {
+            left: 4px;
+        }
+
+        &__arrow--next {
+            right: 4px;
         }
 
         &--cards-only {

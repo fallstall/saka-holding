@@ -86,10 +86,37 @@ defineProps<{
     }
 }
 
-@include laptop {
+@include tablet {
     .cardCloth {
         width: 100%;
-        max-width: 460px;
+        max-width: none;
+        padding: 0;
+
+        &__image {
+            height: auto;
+            aspect-ratio: 1.35 / 1;
+            border-radius: 8px;
+        }
+
+        &__button {
+            left: 12px;
+            bottom: 12px;
+            max-width: calc(100% - 24px);
+            height: 26px;
+            padding: 0 10px;
+
+            :deep(.btn__text) {
+                font-size: 9px;
+            }
+        }
+    }
+}
+
+@include mobile {
+    .cardCloth {
+        &__image {
+            aspect-ratio: 1.6 / 1;
+        }
     }
 }
 </style>

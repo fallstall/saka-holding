@@ -67,7 +67,7 @@ import { RouterLink } from 'vue-router'
         text-underline-offset: 2px;
     }
 }
-  @include laptop {
+  @include tablet {
     .phone {
       display: none;
       

@@ -103,4 +103,57 @@ import Title from '@/components/ui/Title.vue';
     opacity: 0.8;
   }
 }
+
+@include tablet {
+  .feedback-form {
+    width: calc(100% - 32px);
+    height: auto;
+    min-height: 0;
+    margin-bottom: 40px;
+    padding: 36px 24px;
+
+    &__title {
+      margin-top: 0;
+      font-size: 20px;
+    }
+
+    &__subtitle {
+      font-size: 14px;
+    }
+
+    &__form {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 12px;
+
+      :deep(input) {
+        width: 100%;
+      }
+    }
+
+    &__button {
+      width: 100%;
+      max-width: none;
+    }
+  }
+}
+
+@include mobile {
+  .feedback-form {
+    width: calc(100% - 24px);
+    padding: 30px 16px;
+
+    &__title {
+      font-size: 18px;
+    }
+
+    &__form {
+      grid-template-columns: 1fr;
+    }
+
+    &__agreement {
+      font-size: 10px;
+    }
+  }
+}
 </style>

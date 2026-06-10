@@ -4,6 +4,15 @@
 * {
     box-sizing: border-box;
 }
+
+html,
+body,
+#app {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
 body {
     margin: 0;
     font-family: 'Montserrat', sans-serif;

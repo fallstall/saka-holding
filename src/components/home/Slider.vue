@@ -240,31 +240,104 @@ onBeforeUnmount(stopSlider)
     }
 }
 
-@include laptop {
+@include tablet {
     .slider {
-        padding-top: 40px;
+        padding-top: 24px;
 
         &__card {
-            height: 520px;
+            width: calc(100% - 32px);
+            height: 300px;
+            overflow: hidden;
         }
 
         &__content {
-            width: auto;
-            padding: 42px 32px 0;
+            width: 58%;
+            padding: 34px 0 0 28px;
         }
 
         &__title {
-            font-size: 26px;
+            font-size: 18px;
+            line-height: 1.32;
+        }
+
+        &__button {
+            width: 170px;
+            height: 42px;
+            margin-top: 20px;
+            padding: 0 20px;
+            font-size: 12px;
         }
 
         &__woman {
-            right: -40px;
-            width: 360px;
+            right: -18px;
+            bottom: -5px;
+            width: 285px;
         }
 
         &__bottom {
-            left: 32px;
-            bottom: 28px;
+            left: 28px;
+            bottom: 22px;
+            gap: 20px;
+        }
+
+        &__dots {
+            gap: 10px;
+        }
+
+        &__dot {
+            width: 18px;
+        }
+
+        &__counter {
+            gap: 7px;
+            font-size: 12px;
+        }
+    }
+}
+
+@include mobile {
+    .slider {
+        padding-top: 16px;
+
+        &__card {
+            width: calc(100% - 24px);
+            height: 290px;
+        }
+
+        &__content {
+            width: 100%;
+            padding: 24px 20px 0;
+        }
+
+        &__title {
+            max-width: 205px;
+            font-size: 15px;
+        }
+
+        &__button {
+            width: 150px;
+            height: 38px;
+            margin-top: 14px;
+            font-size: 11px;
+
+            img {
+                width: 15px;
+                height: 15px;
+            }
+        }
+
+        &__woman {
+            right: 0;
+            width: 190px;
+        }
+
+        &__bottom {
+            left: 20px;
+            bottom: 14px;
+        }
+
+        &__counter {
+            display: none;
         }
     }
 }

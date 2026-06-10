@@ -19,7 +19,7 @@
     height: auto;
     display: block;
 }
-@include laptop {
+@include tablet {
 
     .logo {
         padding-right: 40px;

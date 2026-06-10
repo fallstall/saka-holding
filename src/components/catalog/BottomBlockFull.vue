@@ -30,7 +30,7 @@ import RightBottomBlock from '@/components/catalog/RightBottomBlock.vue'
     }
 }
 
-@include laptop {
+@include tablet {
     .bottom-block-full {
         width: min(100% - 32px, 862.5px);
         align-items: center;

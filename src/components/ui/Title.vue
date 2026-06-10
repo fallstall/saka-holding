@@ -27,4 +27,20 @@ defineProps<{
             text-align: right;
         }
     }
+
+@include tablet {
+    .title {
+        width: calc(100% - 32px);
+        margin-right: auto;
+        margin-left: auto;
+        font-size: 20px;
+    }
+}
+
+@include mobile {
+    .title {
+        width: calc(100% - 24px);
+        font-size: 18px;
+    }
+}
 </style>

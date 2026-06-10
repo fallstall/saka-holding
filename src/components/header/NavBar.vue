@@ -85,7 +85,7 @@ const navItems = [
         font-size: 14px;
         font-weight: 400;
         line-height: 1;
-        letter-spacing: 3px;
+        letter-spacing: 7%;
 
         transition: color 0.2s ease;
 
@@ -132,7 +132,7 @@ const navItems = [
         transform: rotate(45deg) translateY(-3px);
     }
     }
-    @include laptop {
+    @include tablet {
         .nav {
             display: none;
 

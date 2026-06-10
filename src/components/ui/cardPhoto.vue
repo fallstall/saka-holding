@@ -174,20 +174,61 @@ defineProps<{
 
 @include tablet{
     .Photocard--home{
+        padding: 42px 16px;
+
         height: auto;
+
         .Photocard__cont{
-        display: flex;
-        flex-direction: column-reverse;
-        align-items: center;
+            width: 100%;
+            display: flex;
+            flex-direction: column-reverse;
+            align-items: center;
         }
+
         .Photocard__imgcont{
-            margin-left: 70px;
-            margin-top: 50px;
-            margin-bottom: 100px;
+            width: 100%;
+            margin: 32px 0 0;
         }
+
         .Photocard__img{
-            width: 698px;
-            height: 639px
+            width: 100%;
+            height: auto;
+            aspect-ratio: 1.2 / 1;
+            border-radius: 8px;
+        }
+
+        .Photocard__textcont {
+            width: 100%;
+            margin: 0;
+        }
+
+        .Photocard__text {
+            margin-top: 0;
+            font-size: 20px;
+
+            br {
+                display: none;
+            }
+        }
+
+        .Photocard__colortext {
+            font-size: inherit;
+        }
+
+        .Photocard__row {
+            margin-bottom: 24px;
+        }
+
+        .Photocard__text-el {
+            font-size: 14px;
+
+            br {
+                display: none;
+            }
+        }
+
+        .Photocard__btn-text {
+            width: 260px !important;
         }
     }
     .Photocard--company{
@@ -203,25 +244,43 @@ defineProps<{
             margin-left: -250px;
         }
     }
-    .Photocard__textcont{
-        margin-left: 20px;
-        margin-right: 150px;
-        margin-top: -60px;
-    }
 }
 
 @include mobile{
     .Photocard--home{
+        padding: 32px 12px;
+
         .Photocard__img{
-            width: 360px;
-            height:639px;
-            
+            width: 100%;
         }
+
         .Photocard__textcont{
-            margin-right: 80px;
+            margin: 0;
         }
+
         .Photocard__imgcont{
-            margin-right: 90px;
+            margin: 24px 0 0;
+        }
+
+        .Photocard__text {
+            font-size: 18px;
+        }
+
+        .Photocard__text-small {
+            margin-top: 24px;
+        }
+
+        .Photocard__line {
+            width: 28px;
+            flex: 0 0 28px;
+        }
+
+        .Photocard__text-el {
+            font-size: 12px;
+        }
+
+        .Photocard__btn-text {
+            width: 100% !important;
         }
     }
     .Photocard--company{

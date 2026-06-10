@@ -12,7 +12,7 @@ import FabricSlider from '@/components/ui/FabricSlider.vue'
     min-width: 0;
 }
 
-@include laptop {
+@include tablet {
     .right-bottom-block {
         width: 100%;
     }

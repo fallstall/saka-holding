@@ -36,7 +36,7 @@ import Title from '../Title.vue';
     </div>
 </template>
 
-<style lang="scss">
+<style scoped lang="scss">
     .palette{
         justify-self: center;
         justify-content: center;

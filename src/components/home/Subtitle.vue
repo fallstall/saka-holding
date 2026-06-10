@@ -49,7 +49,7 @@
             gap: 30px;
         }
     }
-@include laptop {
+@include tablet {
 
     .subtitle__main-div {
         display: none;

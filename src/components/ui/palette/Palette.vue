@@ -56,7 +56,7 @@ import Title from '../Title.vue';
     </div>
 </template>
 
-<style lang="scss">
+<style scoped lang="scss">
     .palette{
         justify-self: center;
         justify-content: center;
@@ -90,29 +90,60 @@ import Title from '../Title.vue';
         }
     }
 @include tablet {
-    .palette{
-        margin-right: 50px
-    }
-    .palette__head{
-        display: flex;
-        flex-direction: column;
-    .palette__title{
-        margin-bottom: 30px;
-    }
-    }
-    .palette__row{
-        display: flex;
-        flex-direction: column;
+    .palette {
+        width: calc(100% - 32px);
+        margin: 56px auto 0;
+        padding: 0 0 36px;
+
+        &__head {
+            flex-direction: column;
+            margin-bottom: 40px;
+        }
+
+        &__title {
+            margin: 0 0 24px;
+            font-size: 20px;
+        }
+
+        &__warn {
+            width: 100%;
+        }
+
+        &__row {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+            padding-bottom: 20px;
+        }
+
+        &__tit {
+            width: 100%;
+            margin: 28px 0 28px;
+        }
     }
 }
 @include mobile{
-    .palette__warn{
-        display: none;
-    }
+    .palette {
+        width: calc(100% - 24px);
+        margin-top: 42px;
 
-    .palette__col{
-        display: flex;
-        flex-direction: row;
+        &__warn {
+            display: none;
+        }
+
+        &__title {
+            font-size: 18px;
+        }
+
+        &__col {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 20px 14px;
+        }
+
+        &__row {
+            display: contents;
+        }
     }
 }
 </style>
