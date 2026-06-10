@@ -1,22 +1,28 @@
 <script setup lang="ts">
 import Title from '@/components/ui/Title.vue'
-import arrowIcon from '@/assets/images/ArrowRight.png'
+import ShoppingCart from '@/assets/images/ShoppingCart.png'
 import SliderBottom from './SliderBottom.vue';
 import Button from '../ui/Button.vue';
 import TitlePage from '../TitlePage.vue';
 import SubtitlePage from '../SubtitlePage.vue';
-
+import orange from '@/assets/images/orange.png'
+import palettetwo from '@/components/ui/palette/palettetwo.vue';
 </script>
 
 <template>
   <div class="product-page">
     <div class="product-page__breadcrumbs">
-        <SubtitlePage subtitle="ГЛАВНАЯ > КАТАЛОГ >"/>
-        <TitlePage title="КУЛИНАРНАЯ ГЛАДь"/>
+      <SubtitlePage subtitle="ГЛАВНАЯ > КАТАЛОГ >"/>
+      <TitlePage title="КУЛИНАРНАЯ ГЛАДЬ"/>
     </div>
     
     <div class="product-page__content">
       <div class="product-page__slider">
+        <img 
+          :src="orange" 
+          alt="Кулирная гладь" 
+          class="product-page__main-image"
+        />
         <SliderBottom />
       </div>
 
@@ -32,21 +38,28 @@ import SubtitlePage from '../SubtitlePage.vue';
         </p>
 
         <div class="product-page__colors">
-          <p class="product-page__colors-label">Цвет</p>
-          <TShirtColors />
+          <palettetwo /> 
+          
         </div>
 
         <div class="product-page__actions">
-          <Counter />
-          <Button 
+          <!-- Заглушка для счётчика -->
+          <div style="display:flex; align-items:center; gap:12px; background:#f5f5f5; border-radius:50px; padding:0 16px; height:48px;">
+            <button style="background:none; border:none; font-size:20px; cursor:pointer;">−</button>
+            <span style="font-weight:600;">10</span>
+            <button style="background:none; border:none; font-size:20px; cursor:pointer;">+</button>
+          </div>
+          
+          <Button
+            class="product-page__button"
             theme="full"
             text="Добавить в корзину"
-            :icon="arrowIcon"
-            class="product-page__button"
+            :icon="ShoppingCart"
           />
         </div>
       </div>
 
+      <!-- Характеристики (справа) -->
       <div class="product-page__specs">
         <Title 
           text="Характеристики" 
@@ -89,10 +102,10 @@ import SubtitlePage from '../SubtitlePage.vue';
         </ul>
       </div>
     </div>
-  </div> 
+  </div>
 </template>
 
-<style scoped>
+<style scoped lang="scss">
 .product-page {
   max-width: 1200px;
   margin: 0 auto;
@@ -106,61 +119,44 @@ import SubtitlePage from '../SubtitlePage.vue';
     display: flex;
     gap: 40px;
     flex-wrap: wrap;
+    justify-content: space-between;
   }
 
   &__slider {
-    flex: 1;
+    flex: 1.2;
     min-width: 300px;
+  }
+
+  &__main-image {
+    width: 100%;
+    height: 460px;
+    border-radius: 16px;
+    object-fit: cover;
+    margin-bottom: 16px;
   }
 
   &__info {
     flex: 1;
-    min-width: 300px;
+    min-width: 280px;
   }
 
   &__title {
     font-size: 32px;
-    font-weight: 700;
-    color: #1a1f29;
+    font-weight: 600;
     margin-bottom: 16px;
   }
 
   &__price {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 28px;
-    font-weight: 700;
-    color: #1a1f29;
-    margin-bottom: 24px;
+    font-size: 26px;
+    font-weight: 600;
+    color: var(--gold-color);
+    margin-bottom: 23px;
 
     &-unit {
-      font-size: 16px;
+      font-size: 12px;
       font-weight: 400;
-      color: #6b7280;
+      color: var(--gray-80);
     }
-  }
-
-  &__colors {
-    margin-bottom: 32px;
-    
-    &-label {
-      font-family: 'Montserrat', sans-serif;
-      font-size: 16px;
-      font-weight: 600;
-      color: #1a1f29;
-      margin-bottom: 12px;
-    }
-  }
-
-  &__actions {
-    display: flex;
-    align-items: center;
-    gap: 16px;
-    flex-wrap: wrap;
-  }
-
-  &__button {
-    width: 260px;
-    height: 48px;
   }
 
   &__specs {
@@ -169,9 +165,9 @@ import SubtitlePage from '../SubtitlePage.vue';
   }
 
   &__specs-title {
-    font-size: 24px;
-    font-weight: 700;
-    color: #1a1f29;
+    font-size: 20px;
+    font-weight: 550;
+    color: var(--black);
     margin-bottom: 16px;
   }
 
@@ -188,17 +184,16 @@ import SubtitlePage from '../SubtitlePage.vue';
     display: flex;
     justify-content: space-between;
     padding: 4px 0;
-    font-family: 'Montserrat', sans-serif;
-    font-size: 14px;
+    font-size: 12px;
   }
 
   &__spec-label {
     font-weight: 600;
-    color: #1a1f29;
+    color: var(--black);
   }
 
   &__spec-value {
-    color: #6b7280;
+    color: var(--gray-80);
   }
 }
 </style>

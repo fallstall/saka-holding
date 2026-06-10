@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import Palletecolor from './Palletecolor.vue';
-import Warning from './warning.vue';
+
 import darkgrey from '../../../assets/images/t-shirts/dark-grey.png'
 import grey from '../../../assets/images/t-shirts/grey.png'
 import white from '../../../assets/images/t-shirts/white.png'
