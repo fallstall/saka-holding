@@ -3,6 +3,18 @@ import Button from '@/components/ui/Button.vue'
 import Input from '@/components/ui/Input.vue';
 import arrowIcon from '@/assets/images/ArrowRight.png'
 import Title from '@/components/ui/Title.vue';
+import { ref } from 'vue'
+import Modal from '@/components/home/Pricelist.vue'
+
+const isPricelistModalOpen = ref(false)
+
+const openPricelistModal = () => {
+    isPricelistModalOpen.value = true
+}
+
+const closePricelistModal = () => {
+    isPricelistModalOpen.value = false
+}
 </script>
 
 <template>
@@ -25,6 +37,11 @@ import Title from '@/components/ui/Title.vue';
             theme="full"
             text="Отправить"
             :icon="arrowIcon"
+            @click="openPricelistModal"
+        />
+        <Modal
+            :isOpen="isPricelistModalOpen"
+            @close="closePricelistModal"
         />
       </div>
       <p class="feedback-form__agreement">
