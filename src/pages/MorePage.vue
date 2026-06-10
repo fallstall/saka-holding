@@ -3,11 +3,13 @@ import OrderBanner from '@/components/more/OrderBanner.vue';
 import Calck from '@/components/more/Calck.vue';
 import Input2 from '@/components/more/Input2.vue';
 import SliderBottom from '@/components/more/SliderBottom.vue';
+import ProductPage from '../components/more/ProductPage.vue';
 
 
 </script>
 
 <template>
+<ProductPage />
 <Calck />
 <OrderBanner />
 <Input2 />

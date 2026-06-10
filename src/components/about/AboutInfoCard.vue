@@ -95,7 +95,7 @@ import Title from '@/components/ui/Title.vue'
 .fabric-image {
   position: absolute;
   bottom: 40px;
-  right: -50px;
+  right: -100px;
   width: 1150px;
   height: 533px;
   z-index: 1;
