@@ -95,7 +95,7 @@ function showNext() {
 <style scoped lang="scss">
 .slider-bottom {
     width: min(1160px, calc(100% - 48px));
-    margin: 50px auto 70px;
+    margin:20px;
 
     &__carousel {
         position: relative;

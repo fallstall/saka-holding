@@ -16,7 +16,7 @@ import SliderBottom from '@/components/more/SliderBottom.vue'
           alt="Оранжевая кулирная гладь"
         >
 
-        <SliderBottom embedded static-view />
+        <SliderBottom class="product-page__sliderbottom" />
       </div>
 
       <div class="product-page__details">
@@ -83,7 +83,9 @@ import SliderBottom from '@/components/more/SliderBottom.vue'
     align-items: start;
     gap: clamp(20px, 3vw, 36px);
   }
-
+  &__sliderbottom {
+    margin-left: -6px;
+  }
   &__gallery {
     min-width: 0;
   }
