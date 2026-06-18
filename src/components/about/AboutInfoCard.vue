@@ -64,7 +64,7 @@ import Title from '@/components/ui/Title.vue'
   </div>
 </template>
 
-<style scoped>
+<style scoped lang="scss">
 .page {
   background-color: var(--gray);
   padding: 80px 0;
@@ -101,5 +101,62 @@ import Title from '@/components/ui/Title.vue'
   z-index: 1;
   pointer-events: none;
   object-fit: contain;
+}
+
+@include tablet {
+  .page {
+    padding: 46px 0 28px;
+  }
+
+  .cards-wrapper {
+    max-width: 100%;
+    padding: 0 16px;
+  }
+
+  .section-title {
+    width: 100%;
+    max-width: 560px;
+    margin: 0 0 24px;
+    padding-right: 0;
+    font-size: 20px;
+  }
+
+  .cards-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+    padding-bottom: 76px;
+  }
+
+  .fabric-image {
+    right: -40px;
+    bottom: -18px;
+    width: 520px;
+    height: auto;
+  }
+}
+
+@include mobile {
+  .page {
+    padding: 34px 0;
+  }
+
+  .cards-wrapper {
+    padding: 0 12px;
+  }
+
+  .section-title {
+    margin-bottom: 18px;
+    font-size: 16px;
+  }
+
+  .cards-grid {
+    grid-template-columns: 1fr;
+    gap: 14px;
+    padding-bottom: 0;
+  }
+
+  .fabric-image {
+    display: none;
+  }
 }
 </style>

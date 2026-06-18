@@ -369,23 +369,193 @@ const totalPrice = computed(() => items.reduce((sum, item) => {
     }
 }
 
-@include mobile {
+@include tablet {
+    .calculator__text-center {
+        width: min(420px, calc(100% - 32px));
+        margin: 0 auto 24px;
+        font-size: 18px;
+    }
+
     .calculator {
-        padding: 16px;
+        width: min(100% - 32px, 608px);
+        min-height: 0;
+        margin-bottom: 46px;
+        padding: 0;
+        border-radius: 0;
+        background-color: var(--surface-color);
+        color: var(--text-dark-color);
+
+        &__items {
+            gap: 16px;
+        }
 
         &__item {
-            grid-template-columns: 1fr;
+            min-height: 0;
+            padding: 24px;
+            grid-template-columns: minmax(0, 1fr) 112px;
+            gap: 20px;
+            border-radius: 8px;
+            background-color: var(--bg-color);
+        }
+
+        &__form {
+            gap: 18px;
+        }
+
+        &__label {
+            gap: 8px;
+            color: var(--text-dark-color);
+            font-size: 12px;
+        }
+
+        &__select,
+        &__stepper input,
+        &__stepper button {
+            height: 38px;
+            border-radius: 8px;
+            background-color: var(--surface-color);
+            color: var(--text-dark-color);
+            font-size: 11px;
+        }
+
+        &__select {
+            height: 38px;
+            padding: 0 12px;
+        }
+
+        &__stepper {
+            grid-template-columns: 38px minmax(90px, 1fr) 38px;
+            gap: 8px;
+        }
+
+        &__stepper input {
+            padding: 0 12px;
+        }
+
+        &__stepper button {
+            font-size: 20px;
+        }
+
+        &__prices {
+            margin: 32px 0 0;
+            gap: 22px;
+
+            dt {
+                color: var(--gray-80);
+                font-size: 9px;
+            }
+
+            dd {
+                color: var(--text-dark-color);
+                font-size: 16px;
+            }
         }
 
         &__preview {
+            display: none;
+        }
+
+        &__add {
+            width: 220px;
+            height: 44px;
+            margin: 22px auto;
+            padding: 0 22px;
+            font-size: 12px;
+
+            span {
+                font-size: 26px;
+            }
+        }
+
+        &__summary {
             width: 100%;
-            height: auto;
-            aspect-ratio: 1 / 1;
+            min-height: 126px;
+            padding: 22px 28px;
+            grid-template-columns: 150px 1fr;
+            gap: 22px;
+            border-radius: 8px;
+            background-color: var(--black-color);
+            color: var(--text-light-color);
+
+            dl {
+                gap: 16px;
+
+                div {
+                    grid-template-columns: 100px 1fr;
+                    gap: 10px;
+                }
+
+                dt {
+                    font-size: 9px;
+                }
+
+                dd {
+                    font-size: 18px;
+                }
+            }
+        }
+
+        &__total {
+            span {
+                font-size: 9px;
+            }
+
+            strong {
+                margin-top: 12px;
+                color: var(--gold-color);
+                font-size: 38px;
+            }
+        }
+    }
+}
+
+@include mobile {
+    .calculator__text-center {
+        width: calc(100% - 40px);
+        margin-bottom: 18px;
+        font-size: 16px;
+        text-align: left;
+    }
+
+    .calculator {
+        width: calc(100% - 40px);
+        padding: 0;
+
+        &__item {
+            grid-template-columns: 1fr;
+            gap: 14px;
+            padding: 20px 16px;
+        }
+
+        &__prices {
+            margin: 0;
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 10px;
+
+            div {
+                display: grid;
+                grid-template-columns: 1fr auto;
+                align-items: center;
+                gap: 12px;
+            }
         }
 
         &__summary {
             width: 100%;
             grid-template-columns: 1fr;
+
+            dl {
+                gap: 12px;
+            }
+
+            .calculator__total strong {
+                font-size: 32px;
+            }
+        }
+
+        &__add {
+            width: 100%;
         }
     }
 }

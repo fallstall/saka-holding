@@ -32,9 +32,30 @@ import RightBottomBlock from '@/components/catalog/RightBottomBlock.vue'
 
 @include tablet {
     .bottom-block-full {
-        width: min(100% - 32px, 862.5px);
-        align-items: center;
-        flex-direction: column;
+        width: 100%;
+        display: block;
+
+        > :first-child {
+            display: none;
+        }
+
+        &__column {
+            width: 100%;
+            padding-left: 0;
+            gap: 12px;
+
+            > :nth-child(n + 2) {
+                display: none;
+            }
+        }
+    }
+}
+
+@include mobile {
+    .bottom-block-full {
+        &__column {
+            gap: 10px;
+        }
     }
 }
 </style>

@@ -19,29 +19,49 @@ import compbg from '../../assets/images/cardPhoto-img/compbg.png'
 </template>
 
 <style lang="scss">
-    .about{
-        justify-self: center;
-        width: auto;
-        display: flex;
-        flex-direction: column;
-        padding-top: 50px;
-        padding-left: 150px;
+.about {
+    width: 100%;
+    max-width: 1160px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    padding-top: 50px;
 
-        &__title{
-            margin-left: -140px;
+    &__title {
+        margin-bottom: 18px;
+    }
+
+    &__page-title {
+        width: 100%;
+        margin: 0;
+        padding-bottom: 20px;
+    }
+}
+
+@include tablet {
+    .about {
+        max-width: 100%;
+        padding: 32px 16px 0;
+
+        &__title {
+            width: 100%;
+            margin-bottom: 14px;
         }
 
-        &__page-title{
-            margin-left: -150px;
-            padding-bottom: 20px;
+        &__page-title {
+            width: 100%;
+            padding-bottom: 16px;
         }
     }
-@include mobile{
-    .about{
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        
+}
+
+@include mobile {
+    .about {
+        padding: 24px 12px 0;
+
+        &__title {
+            margin-bottom: 10px;
+        }
     }
 }
 </style>

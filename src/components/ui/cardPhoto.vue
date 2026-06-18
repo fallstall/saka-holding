@@ -232,16 +232,93 @@ defineProps<{
         }
     }
     .Photocard--company{
-        max-width: 960px;
-        margin-left: 130px;
-        margin-bottom: 50px;
-        .Photocard__img{
-            width: 339px;
-            height: 576px
+        width: 100%;
+        max-width: 100%;
+        margin: 0;
+        padding: 0 0 44px;
+
+        .Photocard__cont {
+            position: relative;
+            width: 100%;
+            display: grid;
+            grid-template-columns: minmax(0, 0.88fr) minmax(0, 1.12fr);
+            align-items: start;
+            gap: 24px;
+            padding-bottom: 52px;
         }
+
+        .Photocard__imgcont {
+            width: 100%;
+            margin: 0;
+        }
+
+        .Photocard__img{
+            width: 100%;
+            height: auto;
+            aspect-ratio: 0.78 / 1;
+            border-radius: 8px;
+        }
+
+        .Photocard__textcont {
+            width: 100%;
+            margin: 0;
+        }
+
+        .Photocard__text {
+            margin: 0 0 16px;
+            font-size: 18px;
+            line-height: 1.25;
+
+            br {
+                display: none;
+            }
+        }
+
+        .Photocard__comp-el {
+            margin: 0 0 12px;
+            font-size: 12px;
+            line-height: 1.4;
+
+            br {
+                display: none;
+            }
+        }
+
         .Photocard__emblems{
             position: absolute;
-            margin-left: -250px;
+            right: 0;
+            bottom: 0;
+            width: 64%;
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 8px;
+            padding-top: 0;
+
+            .emblem {
+                width: 100%;
+                max-width: 105px;
+                height: auto;
+                aspect-ratio: 1;
+                margin: 0 auto;
+            }
+
+            .emblem__img {
+                width: 18px;
+                height: 18px;
+            }
+
+            .emblem__title--big {
+                font-size: 27px;
+            }
+
+            .emblem__title--small {
+                font-size: 22px;
+            }
+
+            .emblem__text {
+                width: 82px;
+                font-size: 9px;
+            }
         }
     }
 }
@@ -284,34 +361,55 @@ defineProps<{
         }
     }
     .Photocard--company{
-        
+        padding-bottom: 36px;
+
         .Photocard__cont{
+            position: static;
             display: flex;
             flex-direction: column;
-
-            align-items: center;
+            align-items: stretch;
+            padding-bottom: 0;
         }
+
         .Photocard__emblems{
-            position: relative;
-            display: flex;
-            flex-direction: column;
-            margin-left: 200px;
-            > :first-child {
-                margin-left: -150px;
-            }
-            > :nth-child(3) {
-                margin-left: -150px;
+            position: static;
+            width: 100%;
+            grid-template-columns: 1fr;
+            gap: 12px;
+            padding-top: 8px;
+
+            .emblem {
+                width: 104px;
+                height: 104px;
             }
 
+            .emblem:nth-child(odd) {
+                margin-left: 22px;
+            }
+
+            .emblem:nth-child(even) {
+                margin-right: 22px;
+            }
         }
-        
+
         .Photocard__textcont{
-            margin-left: -50px;
-            margin-top: 50px;
+            margin: 20px 0 0;
         }
+
         .Photocard__img{
-            width: 330px;
-            height: 576px;
+            width: 100%;
+            max-width: 100%;
+            aspect-ratio: 0.64 / 1;
+        }
+
+        .Photocard__text {
+            margin-bottom: 14px;
+            font-size: 16px;
+        }
+
+        .Photocard__comp-el {
+            margin-bottom: 10px;
+            font-size: 12px;
         }
     }
 }

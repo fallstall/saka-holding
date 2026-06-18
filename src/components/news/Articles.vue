@@ -27,4 +27,29 @@ import Artnav from './Artnav.vue';
     align-self: center;
     margin-top: -50px;
 }
+
+@include tablet {
+    .art {
+        width: calc(100% - 48px);
+        margin: 0 auto;
+
+        .btn-art {
+            width: 190px !important;
+            height: 46px !important;
+            margin: 0 auto 58px;
+        }
+    }
+}
+
+@include mobile {
+    .art {
+        width: calc(100% - 40px);
+
+        .btn-art {
+            width: 180px !important;
+            height: 44px !important;
+            margin-bottom: 52px;
+        }
+    }
+}
 </style>

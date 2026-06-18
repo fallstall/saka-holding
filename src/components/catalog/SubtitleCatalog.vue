@@ -37,4 +37,40 @@
             font-weight: 500;
         }
     }
+
+@include tablet {
+    .catalogsub {
+        width: 100%;
+        justify-content: space-between;
+        gap: 12px;
+        padding-bottom: 16px;
+
+        &__cont {
+            order: 3;
+            margin-left: auto;
+        }
+
+        &__contbigtext,
+        &__greytext {
+            margin: 0;
+            font-size: 10px;
+            white-space: nowrap;
+        }
+
+        &__greytext:first-of-type {
+            display: none;
+        }
+    }
+}
+
+@include mobile {
+    .catalogsub {
+        gap: 8px;
+
+        &__contbigtext,
+        &__greytext {
+            font-size: 8px;
+        }
+    }
+}
 </style>

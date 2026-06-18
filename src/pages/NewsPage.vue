@@ -9,12 +9,19 @@ import NewsCards from '../components/ui/news-cards/News-cards.vue';
 </script>
 
 <template>
-<Presentation/>
-<NewsCards/>
-<Articles/>
-<Artnav/>
-<ArtCards/>
+<main class="news-page">
+    <Presentation/>
+    <NewsCards/>
+    <Articles/>
+    <Artnav/>
+    <ArtCards/>
+</main>
 </template>
 
 <style scoped lang="scss">
+.news-page {
+    width: 100%;
+    max-width: 100%;
+    overflow: hidden;
+}
 </style>

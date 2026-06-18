@@ -13,8 +13,10 @@ import greenFabric from '@/assets/images/greenfabric.png'
 
 const props = withDefaults(defineProps<{
     cardsOnly?: boolean
+    catalogGrid?: boolean
 }>(), {
     cardsOnly: false,
+    catalogGrid: false,
 })
 
 const fabrics = [
@@ -32,7 +34,16 @@ const visibleFabrics = computed(() =>
 )
 
 const displayedFabrics = computed(() =>
-    props.cardsOnly ? fabrics.slice(1) : visibleFabrics.value
+    props.catalogGrid
+        ? [whiteFabric, orangeFabric, greenFabric, blueFabric].map((image, index) => ({
+            image,
+            title: fabrics[index]?.title ?? '',
+            price: ['13$', '122,4$', '13$', '122,4$'][index] ?? '',
+            width: fabrics[index]?.width ?? '',
+        }))
+        : props.cardsOnly
+            ? fabrics.slice(1)
+            : visibleFabrics.value
 )
 
 function showPrev() {
@@ -51,7 +62,10 @@ function openFabric() {
 <template>
     <section
         class="fabric-slider"
-        :class="{ 'fabric-slider--cards-only': cardsOnly }"
+        :class="{
+            'fabric-slider--cards-only': cardsOnly,
+            'fabric-slider--catalog-grid': catalogGrid,
+        }"
     >
         
         <div class="fabric-slider__inner">
@@ -266,6 +280,16 @@ function openFabric() {
             width: 267.5px;
         }
     }
+
+    &--catalog-grid {
+        .fabric-slider__viewport {
+            grid-template-columns: repeat(3, minmax(0, 267.5px));
+        }
+
+        .fabric-slider__card {
+            width: 100%;
+        }
+    }
 }
 
 @include tablet {
@@ -310,6 +334,7 @@ function openFabric() {
             .fabric-slider__viewport {
                 grid-template-columns: repeat(2, minmax(0, 267.5px));
                 justify-content: center;
+                gap: 12px;
             }
 
             .fabric-slider__card {
@@ -318,6 +343,16 @@ function openFabric() {
             }
 
             .fabric-slider__card:nth-child(n + 3) {
+                display: none;
+            }
+        }
+
+        &--catalog-grid {
+            .fabric-slider__viewport {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+
+            .fabric-slider__card:nth-child(n) {
                 display: block;
             }
         }
@@ -358,10 +393,25 @@ function openFabric() {
             }
 
             .fabric-slider__viewport {
-                grid-template-columns: minmax(0, 267.5px);
+                grid-template-columns: minmax(0, 1fr);
+                gap: 10px;
             }
 
-            .fabric-slider__card:nth-child(n + 2) {
+            .fabric-slider__card:nth-child(2) {
+                display: block;
+            }
+
+            .fabric-slider__card {
+                max-width: none;
+            }
+        }
+
+        &--catalog-grid {
+            .fabric-slider__viewport {
+                grid-template-columns: 1fr;
+            }
+
+            .fabric-slider__card:nth-child(n) {
                 display: block;
             }
         }

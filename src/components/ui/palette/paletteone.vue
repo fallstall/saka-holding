@@ -69,4 +69,41 @@ import Title from '../Title.vue';
             margin-bottom: 60px;
         }
     }
+
+@include tablet {
+    .palette {
+        width: min(100% - 32px, 608px);
+        margin: 54px auto;
+        padding: 0;
+
+        &__tit {
+            width: 100%;
+            margin: 0 0 34px;
+        }
+
+        &__row {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 26px;
+            padding-bottom: 26px;
+        }
+    }
+}
+
+@include mobile {
+    .palette {
+        width: calc(100% - 40px);
+        margin: 42px auto;
+
+        &__col {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 24px 12px;
+        }
+
+        &__row {
+            display: contents;
+        }
+    }
+}
 </style>

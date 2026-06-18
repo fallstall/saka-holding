@@ -57,4 +57,52 @@ import arrowIcon from '@/assets/images/ArrowRight.png'
   }
   }
 }
+
+@include tablet {
+  .order-banner {
+    width: min(100% - 32px, 608px);
+    height: auto;
+    min-height: 170px;
+    padding: 24px;
+    border-radius: 8px;
+
+    &__content {
+      padding: 0;
+      align-items: flex-start;
+      flex-direction: column;
+      gap: 18px;
+    }
+
+    &__text {
+      width: 100%;
+      max-width: 360px;
+      margin: 0;
+      font-size: 16px;
+    }
+
+    &__button {
+      width: 210px;
+      height: 44px;
+
+      :deep(.btn__text) {
+        font-size: 12px;
+      }
+    }
+  }
+}
+
+@include mobile {
+  .order-banner {
+    width: calc(100% - 40px);
+    padding: 22px 16px;
+
+    &__text {
+      font-size: 14px;
+    }
+
+    &__button {
+      width: 100%;
+    }
+  }
+}
 </style>

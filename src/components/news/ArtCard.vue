@@ -8,7 +8,7 @@ import Button from '../ui/Button.vue';
 
 <template>
     <div class="artcard">
-        <img class="artcatd__img" :src="icon">
+        <img class="artcard__img" :src="icon">
         <div class="artcard__main">
             <div class="artcard__text">
                 <p class="artcard__title">
@@ -65,4 +65,67 @@ import Button from '../ui/Button.vue';
             margin-top: 70px;
         }
     }
+
+@include tablet {
+    .artcard {
+        width: 100%;
+        max-width: none;
+        height: 370px;
+        margin: 0;
+        overflow: hidden;
+        border-radius: 8px;
+
+        &__img {
+            width: 100%;
+            max-width: none;
+            height: auto;
+            aspect-ratio: 1.25 / 1;
+            display: block;
+            object-fit: cover;
+        }
+
+        &__main {
+            min-height: 112px;
+            justify-content: space-between;
+            padding: 12px 14px 14px;
+        }
+
+        &__text {
+            min-width: 0;
+            margin: 0;
+        }
+
+        &__title {
+            margin: 0 0 22px;
+            font-size: 13px;
+            line-height: 1.2;
+        }
+
+        &__date {
+            font-size: 9px;
+        }
+
+        &__button {
+            width: 36px;
+            height: 36px;
+            flex: 0 0 36px;
+            margin: auto 0 0 10px;
+        }
+    }
+}
+
+@include mobile {
+    .artcard {
+        height: auto;
+        min-height: 360px;
+
+        &__img {
+            aspect-ratio: 1.05 / 1;
+        }
+
+        &__main {
+            min-height: 116px;
+        }
+    }
+}
 </style>

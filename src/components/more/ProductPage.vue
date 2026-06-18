@@ -233,14 +233,22 @@ import SliderBottom from '@/components/more/SliderBottom.vue'
 @include tablet {
   .product-page {
     width: calc(100% - 32px);
-    padding: 34px 0 50px;
+    padding: 34px 0 44px;
 
     &__layout {
-      grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-      gap: 28px 22px;
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1.12fr);
+      grid-template-areas:
+        "gallery details"
+        "gallery specs";
+      gap: 0 22px;
+    }
+
+    &__gallery {
+      grid-area: gallery;
     }
 
     &__details {
+      grid-area: details;
       padding-top: 0;
     }
 
@@ -255,34 +263,48 @@ import SliderBottom from '@/components/more/SliderBottom.vue'
     }
 
     &__title {
-      margin-top: 22px;
-      font-size: 22px;
+      margin: 24px 0 12px;
+      font-size: 20px;
+    }
+
+    &__price {
+      margin-bottom: 18px;
+      font-size: 20px;
     }
 
     &__actions {
+      margin-top: 18px;
       align-items: stretch;
       flex-direction: column;
     }
 
     &__counter {
-      width: 100%;
+      order: 2;
+      width: 94px;
+      height: 38px;
+      margin-top: 8px;
+      padding: 0 12px;
       justify-content: space-between;
     }
 
     &__cart-button {
-      width: 100%;
-      margin: 10px 0 0;
+      width: 220px;
+      height: 48px;
+      margin: 0;
     }
 
     &__specs {
-      grid-column: 1 / -1;
-      padding-top: 0;
+      grid-area: specs;
+      padding-top: 14px;
     }
 
     &__specs-list {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 4px 24px;
+      display: block;
+    }
+
+    &__spec {
+      grid-template-columns: 90px 1fr;
+      font-size: 10px;
     }
   }
 }
@@ -294,6 +316,8 @@ import SliderBottom from '@/components/more/SliderBottom.vue'
 
     &__layout {
       grid-template-columns: 1fr;
+      grid-template-areas: none;
+      gap: 16px;
     }
 
     &__details {
@@ -308,6 +332,7 @@ import SliderBottom from '@/components/more/SliderBottom.vue'
 
     &__gallery {
       grid-row: 2;
+      grid-area: auto;
     }
 
     &__title,
@@ -318,11 +343,37 @@ import SliderBottom from '@/components/more/SliderBottom.vue'
     }
 
     &__title {
-      margin: 4px 0 0;
+      grid-row: 3;
+      margin: 0;
+      font-size: 20px;
     }
 
     &__price {
+      grid-row: 4;
       margin-bottom: 4px;
+    }
+
+    &__colors {
+      grid-row: 5;
+    }
+
+    &__specs {
+      grid-row: 6;
+      grid-area: auto;
+      padding-top: 4px;
+    }
+
+    &__actions {
+      grid-row: 7;
+      margin-top: 0;
+    }
+
+    &__cart-button {
+      width: 100%;
+    }
+
+    &__counter {
+      width: 100%;
     }
 
     &__specs-list {
