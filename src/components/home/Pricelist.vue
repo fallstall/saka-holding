@@ -1,4 +1,3 @@
-
 <script setup lang="ts">
 import Button from '../ui/Button.vue';
 import PriceInput from './priceInput.vue';
@@ -69,15 +68,19 @@ const closeModal = () => {
         justify-content: center;
         z-index: 1000;
         animation: fadeIn 0.3s ease;
+        padding: 20px;
     }
 
     .pricelist{
        display: flex;
        flex-direction: row;
-       width: 960px; 
-       height: 588px;
+       max-width: 960px; 
+       max-height: 588px;
+       width: 100%;
+       height: 100%;
        background-color: var(--gray);
        border-radius: 16px;
+       position: relative;
 
        &__main{
         position: absolute;
@@ -85,6 +88,8 @@ const closeModal = () => {
         flex-direction: column;
         padding-left: 40px;
         padding-top: 50px;
+        width: 50%;
+        z-index: 2;
        }
 
        &__title{
@@ -107,11 +112,15 @@ const closeModal = () => {
        }
 
        &__back{
-        width: 560px;
-        height: 588px;
+        max-width: 560px;
+        max-height: 588px;
+        width: 100%;
+        height: 100%;
         background-image: url('../../assets/images/input-icons/priceback.png');
         border-radius: 16px;
         margin-left: 406px;
+        background-size: cover;
+        background-position: center;
        }
 
        &__close{
@@ -128,4 +137,47 @@ const closeModal = () => {
         to { opacity: 1; }
     }
 
+@include tablet{
+.pricelist{
+    padding: 42px 16px;
+    height: auto;
+    &__main{
+        background-color: var(--gray);
+        position: relative;
+        width: 100%;
+        padding: 0;
+    }
+    &__back{
+        display: none;
+    }
+    .pricelist__close{
+        padding-left: 0;
+        position: absolute;
+        top: 20px;
+        right: 20px;
+    }
+}
+}
+@include mobile{
+    .pricelist{
+    padding: 42px 16px;
+    height: auto;
+    &__main{
+        background-color: var(--gray);
+        position: relative;
+        height: auto;
+        width: 100%;
+        padding: 0;
+    }
+    &__back{
+        display: none;
+    }
+    .pricelist__close{
+        padding-left: 0;
+        position: absolute;
+        top: 20px;
+        right: 20px;
+    }
+}   
+}
 </style>

@@ -21,8 +21,9 @@ defineProps<{
         flex-direction: row;
         align-items: center;
         border-radius: 16px;
-        width: 320px;
+        max-width: 320px;
         height: 59px;
+        width: 100%;
         background-color: var(--bg-color);
         margin-bottom: 10px;
         &__icon{
@@ -41,4 +42,5 @@ defineProps<{
         font-weight: 400;
         opacity: 50%;
     }
+
 </style>
