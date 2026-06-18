@@ -1,13 +1,30 @@
 <script setup lang="ts">
 import { RouterLink } from 'vue-router'
+import { ref } from 'vue'
+import LoginModal from '@/components/ui/LoginModal.vue' 
+const isLoginModalOpen = ref(false)
+
+const openLoginModal = () => {
+  isLoginModalOpen.value = true
+}  
+
+const closeLoginModal = () => {
+  isLoginModalOpen.value = false
+}
 </script>
 
 <template>
-    <div class="login">
+    <div class="login" @click="openLoginModal">
         <img class="login__icon" src="./../../assets/images/user.png" alt="">
         <RouterLink class="login__link" to="/">
             Войти
         </RouterLink>
+
+        <!-- Вставлена ваша модалка, всё остальное без изменений -->
+        <LoginModal 
+            :isOpen="isLoginModalOpen" 
+            @close="closeLoginModal"
+        />
     </div>
 </template>
 
