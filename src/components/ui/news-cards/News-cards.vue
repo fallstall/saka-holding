@@ -41,13 +41,13 @@ import Newscard from '@/components/ui/news-cards/News-card-one.vue';
 
 @include tablet{
     .news-card {
-        width: calc(100% - 32px);
-        padding: 32px 0;
+        width: calc(100% - 48px);
+        padding: 20px 0 46px;
 
         &__row:first-child {
             display: grid;
             grid-template-columns: repeat(2, minmax(0, 1fr));
-            gap: 12px;
+            gap: 16px;
 
             & > *:nth-child(3) {
                 display: none;
@@ -61,13 +61,13 @@ import Newscard from '@/components/ui/news-cards/News-card-one.vue';
 }
 @include mobile{
     .news-card{
-        width: calc(100% - 24px);
+        width: calc(100% - 40px);
         margin: 0 auto;
-        padding: 24px 0;
+        padding: 10px 0 34px;
 
         &__row:first-child {
             grid-template-columns: 1fr;
-            gap: 12px;
+            gap: 14px;
         }
     }
 }

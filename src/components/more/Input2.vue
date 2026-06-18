@@ -120,4 +120,66 @@ const closePricelistModal = () => {
     opacity: 0.8;
   }
 }
+
+@include tablet {
+  .feedback-form {
+    width: min(100% - 32px, 608px);
+    height: auto;
+    min-height: 330px;
+    margin-bottom: 52px;
+    padding: 34px 40px;
+    border-radius: 8px;
+
+    &__title {
+      width: 100%;
+      margin: 0 0 8px;
+      font-size: 18px;
+    }
+
+    &__subtitle {
+      margin: 0 0 20px;
+      font-size: 12px;
+    }
+
+    &__form {
+      max-width: 420px;
+      align-items: stretch;
+      flex-direction: column;
+      gap: 10px;
+
+      :deep(.input) {
+        width: 100%;
+        height: 42px;
+        padding: 0 18px;
+        border-radius: 8px;
+        font-size: 11px;
+      }
+    }
+
+    &__button {
+      width: 100%;
+      height: 44px;
+
+      :deep(.btn__text) {
+        font-size: 12px;
+      }
+    }
+
+    &__agreement {
+      max-width: 420px;
+      font-size: 8px;
+    }
+  }
+}
+
+@include mobile {
+  .feedback-form {
+    width: calc(100% - 40px);
+    padding: 30px 16px;
+
+    &__title {
+      font-size: 16px;
+    }
+  }
+}
 </style>

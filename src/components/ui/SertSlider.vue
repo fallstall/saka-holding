@@ -154,10 +154,11 @@ function showNext() {
 
 @include tablet {
     .sert-slider {
-        padding: 24px 0 44px;
+        padding: 0 0 44px;
 
         &__inner {
-            padding: 0 48px;
+            width: min(100% - 32px, 608px);
+            padding: 0 42px;
         }
 
         &__viewport {
@@ -165,7 +166,7 @@ function showNext() {
         }
 
         &__item {
-            height: 330px;
+            height: 360px;
         }
 
         &__item:nth-child(n + 2) {
@@ -179,11 +180,12 @@ function showNext() {
         padding-bottom: 36px;
 
         &__inner {
-            padding: 0 40px;
+            width: calc(100% - 24px);
+            padding: 0 34px;
         }
 
         &__item {
-            height: 260px;
+            height: 300px;
         }
 
         &__arrow {

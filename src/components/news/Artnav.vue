@@ -59,4 +59,49 @@
             padding-right: 50px;
         }
     }
+
+@include tablet {
+    .artnav {
+        width: calc(100% - 48px);
+        margin: 24px auto 0;
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 10px;
+
+        &__cont {
+            width: 100%;
+            height: 34px;
+            margin: 0;
+            border-radius: 12px;
+
+            &:nth-child(n + 5) {
+                display: none;
+            }
+        }
+
+        &__text {
+            padding: 0 8px;
+            overflow: hidden;
+            font-size: 10px;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+    }
+}
+
+@include mobile {
+    .artnav {
+        width: calc(100% - 40px);
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 8px;
+
+        &__cont:nth-child(4) {
+            display: none;
+        }
+
+        &__text {
+            font-size: 9px;
+        }
+    }
+}
 </style>

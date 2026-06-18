@@ -26,4 +26,35 @@ import Title from '../ui/Title.vue';
         margin-top: -10px;
     }
 }
+
+@include tablet {
+    .arti {
+        width: 100%;
+        margin: 0;
+
+        :deep(.title) {
+            width: 100%;
+            margin: 0 0 10px;
+        }
+
+        &__text {
+            padding-left: 0;
+            margin-top: 0;
+            font-size: 14px;
+            line-height: 1.4;
+
+            br {
+                display: none;
+            }
+        }
+    }
+}
+
+@include mobile {
+    .arti {
+        &__text {
+            font-size: 12px;
+        }
+    }
+}
 </style>

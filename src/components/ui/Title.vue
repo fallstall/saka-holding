@@ -8,7 +8,6 @@ defineProps<{
         <p class="title" :class="`title--${theme}`">
             {{ text }}
         </p>
-
 </template>
 <style scoped lang="scss">
 @use '@/assets/styles/variables.scss' as *;

@@ -100,11 +100,11 @@ defineProps<{
 @include tablet {
     .newscard-one {
         width: 100%;
-        height: 300px;
+        height: 340px;
         border-radius: 8px;
 
         &__head {
-            height: 180px;
+            height: 205px;
             border-radius: 8px;
         }
 
@@ -116,13 +116,13 @@ defineProps<{
         }
 
         &__title {
-            margin: 68px 16px 0;
-            font-size: 13px;
+            margin: 82px 18px 0;
+            font-size: 14px;
         }
 
         &__text {
-            margin: 12px 16px 0;
-            font-size: 10px;
+            margin: 14px 18px 0;
+            font-size: 11px;
             line-height: 1.35;
 
             br {
@@ -131,7 +131,7 @@ defineProps<{
         }
 
         &__date {
-            margin: auto 16px 14px;
+            margin: auto 18px 16px;
             font-size: 9px;
         }
     }
@@ -140,16 +140,16 @@ defineProps<{
 @include mobile {
     .newscard-one {
         width: 100%;
-        height: 320px;
+        height: 340px;
 
         &__title,
         &__text,
         &__date {
-            margin-left: 22px;
+            margin-left: 18px;
         }
 
         &__button {
-            margin-right: 22px;
+            margin-right: 18px;
         }
     }
 }

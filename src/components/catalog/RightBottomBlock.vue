@@ -3,7 +3,7 @@ import FabricSlider from '@/components/ui/FabricSlider.vue'
 </script>
 <template>
     <div class="right-bottom-block">
-        <FabricSlider cards-only />
+        <FabricSlider cards-only catalog-grid />
     </div>
 </template>
 <style scoped lang="scss">

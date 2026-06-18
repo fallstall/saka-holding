@@ -76,7 +76,7 @@ import Tekstil3 from '@/assets/images/SakaTekstil/Tekstil3.png'
     margin-bottom: 33px;
     max-width: 500px;
     padding-left: 10px;
-    color: #1a1f29;
+    color: var(--text-dark-color);
   }
 
   &__grid {
@@ -114,6 +114,86 @@ import Tekstil3 from '@/assets/images/SakaTekstil/Tekstil3.png'
     color: var(--black-color);
     line-height: 1.5;
     margin: 0;
+  }
+}
+
+@include tablet {
+  .quality-section {
+    padding: 44px 0;
+
+    &__container {
+      max-width: 100%;
+      padding: 0 16px;
+    }
+
+    &__title {
+      width: 100%;
+      max-width: 520px;
+      margin: 0 0 24px;
+      padding-left: 0;
+      font-size: 20px;
+    }
+
+    &__grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 22px 14px;
+    }
+
+    &__item {
+      min-width: 0;
+      gap: 10px;
+    }
+
+    &__card {
+      height: auto;
+
+      :deep(.cardCloth__image) {
+        aspect-ratio: 1.9 / 1;
+      }
+    }
+
+    &__card-content {
+      padding: 10px 4px 0;
+    }
+
+    &__card-text {
+      font-size: 12px;
+      line-height: 1.4;
+    }
+  }
+}
+
+@include mobile {
+  .quality-section {
+    padding: 36px 0;
+
+    &__container {
+      padding: 0 12px;
+    }
+
+    &__title {
+      margin-bottom: 20px;
+      font-size: 18px;
+    }
+
+    &__grid {
+      grid-template-columns: 1fr;
+      gap: 22px;
+    }
+
+    &__card-content {
+      padding-top: 8px;
+    }
+
+    &__card {
+      :deep(.cardCloth__image) {
+        aspect-ratio: 1.6 / 1;
+      }
+    }
+
+    &__card-text {
+      font-size: 12px;
+    }
   }
 }
 </style>
