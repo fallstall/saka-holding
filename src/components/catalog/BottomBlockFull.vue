@@ -10,8 +10,6 @@ import RightBottomBlock from '@/components/catalog/RightBottomBlock.vue'
         <div class="bottom-block-full__column">
             <RightBottomBlock />
             <RightBottomBlock />
-            <RightBottomBlock />
-            <RightBottomBlock />
         </div>
     </section>
 </template>

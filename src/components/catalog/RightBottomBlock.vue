@@ -1,9 +1,9 @@
 <script setup lang="ts">
-import FabricSlider from '@/components/ui/FabricSlider.vue'
+import FabricCards from '@/components/ui/FabricCards.vue'
 </script>
 <template>
     <div class="right-bottom-block">
-        <FabricSlider cards-only catalog-grid />
+        <FabricCards />
     </div>
 </template>
 <style scoped lang="scss">
