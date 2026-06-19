@@ -4,12 +4,16 @@ import path from 'path'
 
 // https://vite.dev/config/
 export default defineConfig({
+  base: '/saka-holding/',
+
   plugins: [vue()],
+
   resolve: {
     alias: {
       '@': path.resolve(__dirname, './src')
     }
   },
+
   css: {
     preprocessorOptions: {
       scss: {
