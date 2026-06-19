@@ -1,8 +1,4 @@
 <script setup lang="ts">
-import Title from '@/components/ui/Title.vue'
-import Input from '@/components/ui/Input.vue'
-import Button from '@/components/ui/Button.vue'
-
 import userIcon from '@/assets/images/Users.png'
 import eyeIcon from '@/assets/images/Eye.png'
 
@@ -17,146 +13,241 @@ const emit = defineEmits<{
 
 <template>
   <Teleport to="body">
-    <div v-if="isOpen" class="modal-overlay" @click="emit('close')">
-      <div class="modal-window" @click.stop>
-        
-        <button class="login-modal__close" @click="emit('close')">×</button>
+    <div
+      v-if="isOpen"
+      class="login-overlay"
+      @click="emit('close')"
+    >
+      <div
+        class="login-modal"
+        @click.stop
+      >
+        <button
+          class="login-modal__close"
+          type="button"
+          @click="emit('close')"
+        >
+          ×
+        </button>
 
-        <div class="login-modal">
-          <Title 
-            class="login-modal__title"
-            tag="h2"
-            theme="center"
-            text="Вход"
-          />
-          <form class="login-modal__form" @submit.prevent>
-            <div class="login-modal__field">
-              <img :src="userIcon" alt="Логин" class="login-modal__icon" />
-              <Input placeholder="Логин" class="login-modal__input" />
-            </div>
-            <div class="login-modal__field">
-              <img :src="eyeIcon" alt="Пароль" class="login-modal__icon" />
-              <Input placeholder="Пароль" type="password" class="login-modal__input" />
-            </div>
-            <Button 
-              class="login-modal__button"
-              theme="text"
-              text="Войти"
-            />
-            <div class="login-modal__links">
-              <a href="#" class="login-modal__link">Забыли пароль?</a>
-              <a href="#" class="login-modal__link login-modal__link--register">Зарегистрироваться</a>
-            </div>
-          </form>
-        </div>
+        <h2 class="login-modal__title">
+          Вход
+        </h2>
 
+        <form class="login-modal__form" @submit.prevent>
+          <label class="login-modal__field">
+            <img
+              class="login-modal__icon"
+              :src="userIcon"
+              alt=""
+            >
+
+            <input
+              class="login-modal__input"
+              type="text"
+              placeholder="Логин"
+            >
+          </label>
+
+          <label class="login-modal__field">
+            <img
+              class="login-modal__icon"
+              :src="eyeIcon"
+              alt=""
+            >
+
+            <input
+              class="login-modal__input"
+              type="password"
+              placeholder="Пароль"
+            >
+          </label>
+
+          <button
+            class="login-modal__button"
+            type="submit"
+          >
+            Войти
+          </button>
+
+          <div class="login-modal__links">
+            <a class="login-modal__forgot" href="#">
+              Забыли пароль?
+            </a>
+
+            <a class="login-modal__register" href="#">
+              Зарегистрироваться
+            </a>
+          </div>
+        </form>
       </div>
     </div>
   </Teleport>
 </template>
 
 <style scoped lang="scss">
-.modal-overlay {
+.login-overlay {
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  background-color: rgba(0, 0, 0, 0.5);
+  inset: 0;
+  z-index: 1000;
+
   display: flex;
   align-items: center;
   justify-content: center;
-  z-index: 1000;
+
+  padding: 24px;
+  background-color: rgba(54, 67, 78, 0.9);
 }
 
-.modal-window {
-  background-color: #ffffff;
-  border-radius: 16px;
-  padding: 20px;
-  max-width: 450px;
-  width: 100%;
-  position: relative;
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-}
 .login-modal {
-  &__close {
-    position: absolute;
-    top: 12px;
-    right: 16px;
-    background: none;
-    border: none;
-    font-size: 28px;
-    color: #ccc;
-    cursor: pointer;
-    line-height: 1;
-    transition: color 0.2s;
+  position: relative;
+
+  width: 100%;
+  max-width: 345px;
+  padding: 45px 58px 38px;
+  border-radius: 13px;
+
+  background-color: #f8f8f8;
+  color: var(--black-color);
+}
+
+.login-modal__close {
+  position: absolute;
+  top: 12px;
+  right: 16px;
+
+  width: 28px;
+  height: 28px;
+  padding: 0;
+  border: none;
+  background: none;
+  cursor: pointer;
+
+  color: #c9cdd1;
+  font-size: 38px;
+  font-weight: 300;
+  line-height: 24px;
+}
+
+.login-modal__title {
+  margin: 0 0 31px;
+
+  color: var(--black-color);
+  font-size: 26px;
+  font-weight: 700;
+  line-height: 1;
+  text-align: center;
+}
+
+.login-modal__form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.login-modal__field {
+  position: relative;
+  width: 229px;
+  height: 56px;
+  margin-bottom: 10px;
+}
+
+.login-modal__icon {
+  position: absolute;
+  top: 50%;
+  left: 19px;
+  transform: translateY(-50%);
+
+  width: 15px;
+  height: 15px;
+  object-fit: contain;
+  pointer-events: none;
+  opacity: 0.55;
+}
+
+.login-modal__input {
+  width: 100%;
+  height: 100%;
+  padding: 0 18px 0 46px;
+  border: none;
+  border-radius: 13px;
+  outline: none;
+
+  background-color: #ffffff;
+  color: var(--black-color);
+
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.login-modal__input::placeholder {
+  color: #a9aeb4;
+}
+
+.login-modal__button {
+  width: 229px;
+  height: 54px;
+  margin-top: 0;
+  border: none;
+  border-radius: 100px;
+  cursor: pointer;
+
+  background-color: var(--gold-color);
+  color: var(--black-color);
+
+  font-family: inherit;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.login-modal__links {
+  margin-top: 18px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 11px;
+}
+
+.login-modal__forgot {
+  color: var(--black-color);
+  font-size: 13px;
+  font-weight: 400;
+  letter-spacing: 1.3px;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.login-modal__register {
+  color: var(--gold-color);
+  font-size: 13px;
+  font-weight: 400;
+  letter-spacing: 2.5px;
+  text-decoration: none;
+}
+
+@media (max-width: 480px) {
+  .login-overlay {
+    align-items: flex-start;
+    padding: 75px 6px 24px;
   }
 
-  &__title {
-    color: #1a1f29;
-    margin-bottom: 20px;
+  .login-modal {
+    max-width: 345px;
+    padding: 45px 58px 38px;
+  }
+}
+
+@media (max-width: 360px) {
+  .login-modal {
+    max-width: 320px;
+    padding: 42px 46px 36px;
   }
 
-  &__form {
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-  }
-
-  &__field {
-    position: relative;
-    width: 100%;
-  }
-
-  &__icon {
-    position: absolute;
-    left: 16px;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 20px;
-    height: 20px;
-    object-fit: contain;
-    pointer-events: none;
-  }
-
-  &__input {
-    width: 100%;
-    border-radius: 12px;
-    height: 48px;
-    border: 1px solid transparent;
-    box-sizing: border-box;
-
-  }
-
-  &__button {
-    width: 100%;
-    height: 56px;
-    margin-top: 8px;
-    border-radius: 28px;
-    display: flex;           
-    justify-content: center; 
-    align-items: center; 
-  }
-
-  &__links {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 12px;
-    margin-top: 20px;
-  }
-
-  &__link {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 14px;
-    text-decoration: none;
-    color: #1a1f29;
-    border-bottom: 1px solid #1a1f29;
-    padding-bottom: 2px;
-    &--register {
-      color: var(--gold-color);
-      border-bottom-color: var(--gold-color);
-    }
+  .login-modal__field,
+  .login-modal__button {
+    width: 229px;
   }
 }
 </style>
